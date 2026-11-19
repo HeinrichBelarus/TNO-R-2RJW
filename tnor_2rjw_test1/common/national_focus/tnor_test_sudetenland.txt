@@ -1,0 +1,53 @@
+focus_tree = {
+    id = tnor_test_sudeten_tree
+    country = {
+        factor = 0
+        modifier = {
+            add = 100
+            tag = SDT
+        }
+    }
+    default = no
+
+    focus = {
+        id = TNOR_TEST_SDT_WEST
+        icon = GFX_goal_generic_construct_civ_factory
+        x = 0
+        y = 0
+        cost = 1
+        mutually_exclusive = { focus = TNOR_TEST_SDT_EAST }
+        completion_reward = { add_political_power = 50 }
+        ai_will_do = { factor = 1 }
+    }
+
+    focus = {
+        id = TNOR_TEST_SDT_EAST
+        icon = GFX_goal_generic_construct_civ_factory
+        x = 2
+        y = 0
+        cost = 1
+        mutually_exclusive = { focus = TNOR_TEST_SDT_WEST }
+        completion_reward = {
+            load_focus_tree = tnor_test_sudeten_east_tree
+        }
+        ai_will_do = { factor = 1 }
+    }
+}
+
+focus_tree = {
+    id = tnor_test_sudeten_east_tree
+    country = { factor = 0 }
+    default = no
+
+    focus = {
+        id = TNOR_TEST_SDT_PREPARE
+        icon = GFX_goal_generic_construct_infrastructure
+        x = 2
+        y = 0
+        cost = 1
+        completion_reward = {
+            set_country_flag = tnor_test_rail_unlocked
+        }
+        ai_will_do = { factor = 1 }
+    }
+}

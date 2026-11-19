@@ -1,0 +1,12 @@
+characters = {
+    SDT_tnor_test_chair = {
+        name = SDT_tnor_test_chair
+        portraits = {
+            civilian = { large = GFX_tnor_test_portrait }
+        }
+        country_leader = {
+            ideology = despotism_interim_government_subtype
+            expire = "1999.12.31"
+        }
+    }
+}

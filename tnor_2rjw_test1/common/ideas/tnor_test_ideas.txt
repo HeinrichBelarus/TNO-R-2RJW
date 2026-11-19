@@ -1,0 +1,12 @@
+ideas = {
+    country = {
+        tnor_test_rail_military = {
+            allowed = { always = no }
+            modifier = { supply_consumption_factor = -0.05 }
+        }
+        tnor_test_rail_civilian = {
+            allowed = { always = no }
+            modifier = { production_speed_infrastructure_factor = 0.10 }
+        }
+    }
+}
