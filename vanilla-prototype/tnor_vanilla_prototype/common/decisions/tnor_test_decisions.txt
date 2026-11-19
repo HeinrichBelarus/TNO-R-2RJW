@@ -1,5 +1,8 @@
 tnor_test_sudeten_category = {
     tnor_test_release_sudetenland = {
+        icon = GFX_decision_generic_speech
+        allowed = { original_tag = GER }
+        visible = { always = yes }
         cost = 0
         fire_only_once = yes
         available = {
