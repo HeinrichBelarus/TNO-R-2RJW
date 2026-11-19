@@ -1,0 +1,9 @@
+tnor_test_sudeten_category = {
+    allowed = { original_tag = GER }
+    visible = { NOT = { country_exists = SDT } }
+}
+
+tnor_test_rail_category = {
+    allowed = { original_tag = SDT }
+    visible = { has_country_flag = tnor_test_rail_unlocked }
+}

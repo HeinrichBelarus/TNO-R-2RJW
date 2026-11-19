@@ -1,0 +1,24 @@
+on_actions = {
+    on_startup = {
+        effect = {
+            GER = {
+                set_country_leader_portrait = {
+                    portrait = GFX_tnor_test_portrait
+                }
+            }
+            BRA = {
+                if = {
+                    limit = {
+                        is_in_faction = no
+                        ARG = { exists = yes is_in_faction = no }
+                    }
+                    create_faction_from_template = {
+                        template = faction_template_defensive_democratic
+                        name = TNOR_TEST_UNION
+                    }
+                    add_to_faction = ARG
+                }
+            }
+        }
+    }
+}

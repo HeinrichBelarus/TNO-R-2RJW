@@ -1,0 +1,9 @@
+capital = 69
+recruit_character = SDT_tnor_test_chair
+set_politics = {
+    ruling_party = neutrality
+    elections_allowed = no
+}
+set_popularities = {
+    neutrality = 100
+}

@@ -1,0 +1,33 @@
+tnor_test_sudeten_category = {
+    tnor_test_release_sudetenland = {
+        cost = 0
+        fire_only_once = yes
+        available = {
+            NOT = { country_exists = SDT }
+            owns_state = 69
+            controls_state = 69
+        }
+        complete_effect = {
+            SDT = {
+                add_state_core = 69
+                transfer_state = 69
+                set_capital = { state = 69 }
+                load_focus_tree = tnor_test_sudeten_tree
+                country_event = { id = tnor_test.1 }
+            }
+        }
+        ai_will_do = { factor = 0 }
+    }
+}
+
+tnor_test_rail_category = {
+    tnor_test_rail_survey = {
+        cost = 0
+        days_remove = 14
+        fire_only_once = yes
+        visible = { has_country_flag = tnor_test_rail_unlocked }
+        available = { controls_state = 69 }
+        remove_effect = { country_event = { id = tnor_test.2 } }
+        ai_will_do = { factor = 1 }
+    }
+}
