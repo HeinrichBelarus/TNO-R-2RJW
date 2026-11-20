@@ -5,7 +5,7 @@ focus_tree = {
 
     focus = {
         id = TNOR_2RJW_the_wind_begins_to_howl
-        icon = GFX_goal_unknown
+        icon = GFX_focus_generic_railway_work
         cost = 1
         x = 8
         y = 0
@@ -14,7 +14,7 @@ focus_tree = {
 
     focus = {
         id = TNOR_2RJW_fortify_the_western_border
-        icon = GFX_goal_unknown
+        icon = GFX_focus_generic_railway_work
         cost = 4.286
         prerequisite = { focus = TNOR_2RJW_the_wind_begins_to_howl }
         allow_branch = { NOT = { has_country_flag = tnor_2rjw_west_deferred } }
@@ -25,7 +25,7 @@ focus_tree = {
 
     focus = {
         id = TNOR_2RJW_mobilise_the_border_guards
-        icon = GFX_goal_unknown
+        icon = GFX_focus_generic_railway_work
         cost = 1
         prerequisite = { focus = TNOR_2RJW_fortify_the_western_border }
         x = 0
@@ -35,7 +35,7 @@ focus_tree = {
 
     focus = {
         id = TNOR_2RJW_keep_berlin_guessing
-        icon = GFX_goal_unknown
+        icon = GFX_focus_generic_railway_work
         cost = 1
         prerequisite = { focus = TNOR_2RJW_mobilise_the_border_guards }
         x = 0
@@ -45,7 +45,7 @@ focus_tree = {
 
     focus = {
         id = TNOR_2RJW_a_plan_meant_to_be_stolen
-        icon = GFX_goal_unknown
+        icon = GFX_focus_generic_railway_work
         cost = 1
         prerequisite = { focus = TNOR_2RJW_keep_berlin_guessing }
         x = 0
@@ -55,7 +55,7 @@ focus_tree = {
 
     focus = {
         id = TNOR_2RJW_the_phantom_army
-        icon = GFX_goal_unknown
+        icon = GFX_focus_generic_railway_work
         cost = 1
         prerequisite = { focus = TNOR_2RJW_a_plan_meant_to_be_stolen }
         x = 0
@@ -65,7 +65,7 @@ focus_tree = {
 
     focus = {
         id = TNOR_2RJW_all_quiet_on_the_western_front
-        icon = GFX_goal_unknown
+        icon = GFX_focus_generic_railway_work
         cost = 1
         prerequisite = { focus = TNOR_2RJW_the_phantom_army }
         x = 0
@@ -75,7 +75,7 @@ focus_tree = {
 
     focus = {
         id = TNOR_2RJW_sharpen_the_sword
-        icon = GFX_goal_unknown
+        icon = GFX_focus_generic_railway_work
         cost = 1
         prerequisite = { focus = TNOR_2RJW_the_wind_begins_to_howl }
         x = 8
@@ -85,7 +85,7 @@ focus_tree = {
 
     focus = {
         id = TNOR_2RJW_the_amphibious_spearhead
-        icon = GFX_goal_unknown
+        icon = GFX_focus_generic_railway_work
         cost = 2.143
         prerequisite = { focus = TNOR_2RJW_sharpen_the_sword }
         x = 4
@@ -95,7 +95,7 @@ focus_tree = {
 
     focus = {
         id = TNOR_2RJW_where_rivers_run_red
-        icon = GFX_goal_unknown
+        icon = GFX_focus_generic_railway_work
         cost = 2.143
         prerequisite = { focus = TNOR_2RJW_the_amphibious_spearhead }
         x = 4
@@ -105,7 +105,7 @@ focus_tree = {
 
     focus = {
         id = TNOR_2RJW_through_fire_and_water
-        icon = GFX_goal_unknown
+        icon = GFX_focus_generic_railway_work
         cost = 2.143
         prerequisite = { focus = TNOR_2RJW_where_rivers_run_red }
         x = 4
@@ -115,7 +115,7 @@ focus_tree = {
 
     focus = {
         id = TNOR_2RJW_the_steel_fist
-        icon = GFX_goal_unknown
+        icon = GFX_focus_generic_railway_work
         cost = 2.143
         prerequisite = { focus = TNOR_2RJW_sharpen_the_sword }
         x = 8
@@ -125,7 +125,7 @@ focus_tree = {
 
     focus = {
         id = TNOR_2RJW_engines_of_destruction
-        icon = GFX_goal_unknown
+        icon = GFX_focus_generic_railway_work
         cost = 2.143
         prerequisite = { focus = TNOR_2RJW_the_steel_fist }
         x = 8
@@ -135,7 +135,7 @@ focus_tree = {
 
     focus = {
         id = TNOR_2RJW_crush_them_beneath_our_tracks
-        icon = GFX_goal_unknown
+        icon = GFX_focus_generic_railway_work
         cost = 2.143
         prerequisite = { focus = TNOR_2RJW_engines_of_destruction }
         x = 8
@@ -145,7 +145,7 @@ focus_tree = {
 
     focus = {
         id = TNOR_2RJW_the_backbone_of_the_army
-        icon = GFX_goal_unknown
+        icon = GFX_focus_generic_railway_work
         cost = 2.143
         prerequisite = { focus = TNOR_2RJW_sharpen_the_sword }
         x = 12
@@ -155,7 +155,7 @@ focus_tree = {
 
     focus = {
         id = TNOR_2RJW_the_scars_of_a_thousand_battles
-        icon = GFX_goal_unknown
+        icon = GFX_focus_generic_railway_work
         cost = 2.143
         prerequisite = { focus = TNOR_2RJW_the_backbone_of_the_army }
         x = 12
@@ -165,7 +165,7 @@ focus_tree = {
 
     focus = {
         id = TNOR_2RJW_through_mud_and_fire
-        icon = GFX_goal_unknown
+        icon = GFX_focus_generic_railway_work
         cost = 2.143
         prerequisite = { focus = TNOR_2RJW_the_scars_of_a_thousand_battles }
         x = 12
@@ -175,7 +175,7 @@ focus_tree = {
 
     focus = {
         id = TNOR_2RJW_the_roar_of_a_thousand_engines
-        icon = GFX_goal_unknown
+        icon = GFX_focus_generic_railway_work
         cost = 2.858
         prerequisite = { focus = TNOR_2RJW_through_fire_and_water }
         prerequisite = { focus = TNOR_2RJW_crush_them_beneath_our_tracks }
@@ -187,7 +187,7 @@ focus_tree = {
 
     focus = {
         id = TNOR_2RJW_the_sky_shall_burn
-        icon = GFX_goal_unknown
+        icon = GFX_focus_generic_railway_work
         cost = 2.858
         prerequisite = { focus = TNOR_2RJW_the_roar_of_a_thousand_engines }
         x = 8
@@ -197,7 +197,7 @@ focus_tree = {
 
     focus = {
         id = TNOR_2RJW_the_war_room
-        icon = GFX_goal_unknown
+        icon = GFX_focus_generic_railway_work
         cost = 1
         prerequisite = { focus = TNOR_2RJW_the_wind_begins_to_howl }
         x = 16
@@ -207,7 +207,7 @@ focus_tree = {
 
     focus = {
         id = TNOR_2RJW_on_the_chessboard_of_war
-        icon = GFX_goal_unknown
+        icon = GFX_focus_generic_railway_work
         cost = 1
         prerequisite = { focus = TNOR_2RJW_the_war_room }
         x = 16
@@ -217,7 +217,7 @@ focus_tree = {
 
     focus = {
         id = TNOR_2RJW_blueprint_for_victory
-        icon = GFX_goal_unknown
+        icon = GFX_focus_generic_railway_work
         cost = 1
         prerequisite = { focus = TNOR_2RJW_on_the_chessboard_of_war }
         x = 16
@@ -227,7 +227,7 @@ focus_tree = {
 
     focus = {
         id = TNOR_2RJW_no_margin_for_error
-        icon = GFX_goal_unknown
+        icon = GFX_focus_generic_railway_work
         cost = 1
         prerequisite = { focus = TNOR_2RJW_blueprint_for_victory }
         x = 16
@@ -237,7 +237,7 @@ focus_tree = {
 
     focus = {
         id = TNOR_2RJW_the_die_is_cast
-        icon = GFX_goal_unknown
+        icon = GFX_focus_generic_railway_work
         cost = 1
         prerequisite = { focus = TNOR_2RJW_no_margin_for_error }
         x = 16
@@ -247,11 +247,12 @@ focus_tree = {
 
     focus = {
         id = TNOR_2RJW_the_sword_is_sharpened
-        icon = GFX_goal_unknown
+        icon = GFX_focus_generic_railway_work
         cost = 1
         prerequisite = { focus = TNOR_2RJW_the_sky_shall_burn }
-        prerequisite = { focus = TNOR_2RJW_the_die_is_cast }
+        prerequisite = { focus = TNOR_2RJW_the_die_is_cast focus = TNOR_2RJW_all_quiet_on_the_western_front }
         available = {
+            has_completed_focus = TNOR_2RJW_the_die_is_cast
             if = {
                 limit = { NOT = { has_country_flag = tnor_2rjw_west_deferred } }
                 has_completed_focus = TNOR_2RJW_all_quiet_on_the_western_front
@@ -260,6 +261,72 @@ focus_tree = {
         x = 8
         y = 7
         ai_will_do = { factor = 1 }
+        completion_reward = {
+            set_country_flag = tnor_2rjw_central_asia_open
+            mark_focus_tree_layout_dirty = yes
+        }
+    }
+
+    focus = {
+        id = TNOR_2RJW_the_dragons_fractured_realm
+        icon = GFX_focus_generic_railway_work
+        cost = 1
+        prerequisite = { focus = TNOR_2RJW_the_sword_is_sharpened }
+        x = 8
+        y = 8
+        ai_will_do = { factor = 1 }
+        allow_branch = { has_country_flag = tnor_2rjw_central_asia_open }
+    }
+
+    focus = {
+        id = TNOR_2RJW_an_ultimatum_in_disguise
+        icon = GFX_focus_generic_railway_work
+        cost = 1
+        prerequisite = { focus = TNOR_2RJW_the_dragons_fractured_realm }
+        x = 8
+        y = 9
+        ai_will_do = { factor = 1 }
+        completion_reward = {
+            save_global_event_target_as = tnor_2rjw_campaign_russia
+            country_event = { id = tnor_2rjw_dragon.1 }
+        }
+    }
+
+    focus = {
+        id = TNOR_2RJW_operation_broken_dragon
+        icon = GFX_focus_generic_railway_work
+        cost = 1
+        prerequisite = { focus = TNOR_2RJW_an_ultimatum_in_disguise }
+        x = 6
+        y = 10
+        ai_will_do = { factor = 1 }
+        mutually_exclusive = { focus = TNOR_2RJW_a_common_enemy_a_common_cause }
+        available = { has_country_flag = tnor_2rjw_dragon_force }
+        completion_reward = { tnor_2rjw_launch_broken_dragon = yes }
+    }
+
+    focus = {
+        id = TNOR_2RJW_a_common_enemy_a_common_cause
+        icon = GFX_focus_generic_railway_work
+        cost = 1
+        prerequisite = { focus = TNOR_2RJW_an_ultimatum_in_disguise }
+        x = 10
+        y = 10
+        ai_will_do = { factor = 1 }
+        mutually_exclusive = { focus = TNOR_2RJW_operation_broken_dragon }
+        available = { tnor_2rjw_dragon_agreement_ready = yes }
+        completion_reward = { country_event = { id = tnor_2rjw_dragon.3 } }
+    }
+
+    focus = {
+        id = TNOR_2RJW_the_sun_begins_to_set
+        icon = GFX_focus_generic_railway_work
+        cost = 1
+        x = 8
+        y = 11
+        ai_will_do = { factor = 1 }
+        prerequisite = { focus = TNOR_2RJW_operation_broken_dragon focus = TNOR_2RJW_a_common_enemy_a_common_cause }
+        available = { tnor_2rjw_central_asia_settled = yes }
         completion_reward = { load_focus_tree = { tree = tnor_2rjw_eastern_preparation_stage_3 keep_completed = yes } }
     }
 }

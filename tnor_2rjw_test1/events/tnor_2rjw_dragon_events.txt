@@ -1,0 +1,81 @@
+add_namespace = tnor_2rjw_dragon
+
+country_event = {
+    id = tnor_2rjw_dragon.1
+    title = tnor_2rjw_dragon.1.t
+    desc = tnor_2rjw_dragon.1.d
+    is_triggered_only = yes
+
+    option = {
+        name = tnor_2rjw_dragon.1.a
+        ai_chance = { factor = 100 }
+        set_country_flag = tnor_2rjw_dragon_talks
+        tnor_2rjw_send_dragon_proposal = { TARGET = XIN }
+        tnor_2rjw_send_dragon_proposal = { TARGET = QIN }
+    }
+    option = {
+        name = tnor_2rjw_dragon.1.b
+        ai_chance = { factor = 0 }
+        set_country_flag = tnor_2rjw_dragon_force
+    }
+}
+
+country_event = {
+    id = tnor_2rjw_dragon.2
+    title = tnor_2rjw_dragon.2.t
+    desc = tnor_2rjw_dragon.2.d
+    is_triggered_only = yes
+
+    option = {
+        name = tnor_2rjw_dragon.2.a
+        ai_chance = { factor = 100 }
+        set_country_flag = tnor_2rjw_dragon_accepted
+    }
+    option = {
+        name = tnor_2rjw_dragon.2.b
+        trigger = { is_ai = no }
+        event_target:tnor_2rjw_campaign_russia = {
+            clr_country_flag = tnor_2rjw_dragon_talks
+            set_country_flag = tnor_2rjw_dragon_force
+            country_event = { id = tnor_2rjw_dragon.5 }
+        }
+    }
+}
+
+country_event = {
+    id = tnor_2rjw_dragon.3
+    title = tnor_2rjw_dragon.3.t
+    desc = tnor_2rjw_dragon.3.d
+    is_triggered_only = yes
+
+    option = {
+        name = tnor_2rjw_dragon.3.a
+        tnor_2rjw_ratify_dragon_agreement = { TARGET = XIN }
+        tnor_2rjw_ratify_dragon_agreement = { TARGET = QIN }
+        clr_country_flag = tnor_2rjw_dragon_talks
+    }
+}
+
+country_event = {
+    id = tnor_2rjw_dragon.4
+    title = tnor_2rjw_dragon.4.t
+    desc = tnor_2rjw_dragon.4.d
+    is_triggered_only = yes
+    option = { name = tnor_2rjw_dragon.4.a }
+}
+
+country_event = {
+    id = tnor_2rjw_dragon.5
+    title = tnor_2rjw_dragon.5.t
+    desc = tnor_2rjw_dragon.5.d
+    is_triggered_only = yes
+    option = { name = tnor_2rjw_dragon.5.a }
+}
+
+country_event = {
+    id = tnor_2rjw_dragon.6
+    title = tnor_2rjw_dragon.6.t
+    desc = tnor_2rjw_dragon.6.d
+    is_triggered_only = yes
+    option = { name = tnor_2rjw_dragon.6.a }
+}

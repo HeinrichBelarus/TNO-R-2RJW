@@ -119,6 +119,15 @@ foreach ($id in @('NOV_WCW_debug', 'NOV_MU_debug')) {
     $debug = Replace-One $debug $pattern ''
 }
 
+# Resolve the two marked campaign targets as puppets before Requiem's generic annexation handler.
+$peacePath = 'common/on_actions/TNO_peace_on_actions.txt'
+$peace = Replace-One (Read-RequiemFile $peacePath) '(?m)^\ton_capitulation = \{\n\t\teffect = \{\n' (
+    "`ton_capitulation = {`n`t`teffect = {`n" +
+    "`t`t`tif = {`n`t`t`t`tlimit = { tnor_2rjw_dragon_capitulation = yes }`n" +
+    "`t`t`t`ttnor_2rjw_handle_dragon_capitulation = yes`n`t`t`t}`n`t`t`telse = {`n")
+$peace = Replace-One $peace '(?m)^\t\t\tclr_global_flag = skip_default_capitulation[ \t]*\n\t\t\}\n\t\}' (
+    "`t`t`tclr_global_flag = skip_default_capitulation`n`t`t`t}`n`t`t}`n`t}")
+
 # Validate every original anchor before writing anything to the installed submod.
 New-Item -ItemType Directory -Path $InstallPath -Force | Out-Null
 if ([IO.Path]::GetFullPath($package) -ne [IO.Path]::GetFullPath($InstallPath)) {
@@ -128,6 +137,7 @@ $overrides = @{
     $sharedPath = $shared
     $treePath = $trees
     $debugPath = $debug
+    $peacePath = $peace
 }
 foreach ($relativePath in $overrides.Keys) {
     $destination = Join-Path $InstallPath $relativePath

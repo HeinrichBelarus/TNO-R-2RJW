@@ -1,0 +1,47 @@
+# Evaluate in the Russian campaign country's scope.
+tnor_2rjw_central_asia_settled = {
+    OR = {
+        NOT = { country_exists = XIN }
+        XIN = { is_subject_of = ROOT }
+    }
+    OR = {
+        NOT = { country_exists = QIN }
+        QIN = { is_subject_of = ROOT }
+    }
+}
+
+tnor_2rjw_dragon_agreement_ready = {
+    has_country_flag = tnor_2rjw_dragon_talks
+    OR = {
+        NOT = { country_exists = XIN }
+        XIN = {
+            OR = {
+                is_subject_of = ROOT
+                has_country_flag = tnor_2rjw_dragon_accepted
+            }
+        }
+    }
+    OR = {
+        NOT = { country_exists = QIN }
+        QIN = {
+            OR = {
+                is_subject_of = ROOT
+                has_country_flag = tnor_2rjw_dragon_accepted
+            }
+        }
+    }
+}
+
+# Evaluate from the capitulation on-action: ROOT lost, FROM won.
+tnor_2rjw_dragon_capitulation = {
+    ROOT = {
+        has_country_flag = tnor_2rjw_dragon_war_target
+        has_war_with = event_target:tnor_2rjw_campaign_russia
+    }
+    FROM = {
+        OR = {
+            tag = event_target:tnor_2rjw_campaign_russia
+            is_in_faction_with = event_target:tnor_2rjw_campaign_russia
+        }
+    }
+}

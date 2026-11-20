@@ -1,0 +1,193 @@
+tnor_2rjw_open_partisan_supply = {
+    set_country_flag = tnor_2rjw_partisan_supply_open
+    set_variable = { tnor_2rjw_mongolia_divisions = 0 }
+    set_variable = { tnor_2rjw_primorye_divisions = 0 }
+}
+
+# One brigade: five infantry battalions, anti-tank and engineer support.
+tnor_2rjw_pay_partisan_supply_kit = {
+    add_equipment_to_stockpile = { type = infantry_equipment amount = -615 }
+    add_equipment_to_stockpile = { type = anti_tank_equipment amount = -72 }
+    add_equipment_to_stockpile = { type = support_equipment amount = -30 }
+}
+
+tnor_2rjw_raise_irkutsk_infantry = {
+    if = {
+        limit = { 566 = { is_controlled_by = ROOT } }
+        if = {
+            limit = { NOT = { has_template = "Eastern Rifle Division" } }
+            division_template = {
+                name = "Eastern Rifle Division"
+                regiments = {
+                    infantry = { x = 0 y = 0 }
+                    infantry = { x = 0 y = 1 }
+                    infantry = { x = 0 y = 2 }
+                    infantry = { x = 1 y = 0 }
+                    infantry = { x = 1 y = 1 }
+                    infantry = { x = 1 y = 2 }
+                }
+            }
+        }
+        566 = {
+            create_unit = {
+                division = "division_template = \"Eastern Rifle Division\" start_experience_factor = 1 start_equipment_factor = 1"
+                owner = ROOT
+                prioritize_location = 1727
+                count = 2
+            }
+        }
+    }
+}
+
+tnor_2rjw_prepare_partisan_zones = {
+    every_state = {
+        limit = {
+            NOT = { is_demilitarized_zone = yes }
+            OR = {
+                AND = {
+                    is_owned_by = MEN
+                    OR = { state = 814 state = 815 }
+                }
+                AND = {
+                    tnor_2rjw_far_eastern_partisan_land = yes
+                    NOT = { state = 1646 }
+                }
+            }
+        }
+        set_demilitarized_zone = yes
+        set_state_flag = tnor_2rjw_partisan_dmz
+    }
+}
+
+tnor_2rjw_establish_partisan_states = {
+    every_state = {
+        limit = { tnor_2rjw_mongolian_partisan_land = yes }
+        add_core_of = MPS
+        MPS = { transfer_state = PREV }
+    }
+    every_state = {
+        limit = { tnor_2rjw_far_eastern_partisan_land = yes }
+        add_core_of = FPS
+        FPS = { transfer_state = PREV }
+    }
+    tnor_2rjw_prepare_partisan_country = { TARGET = MPS CAPITAL = 330 }
+    tnor_2rjw_prepare_partisan_country = { TARGET = FPS CAPITAL = 1646 }
+}
+
+tnor_2rjw_prepare_partisan_country = {
+    if = {
+        limit = { country_exists = $TARGET$ }
+        $TARGET$ = {
+            if = {
+                limit = { $CAPITAL$ = { is_owned_by = PREV } }
+                set_capital = { state = $CAPITAL$ }
+            }
+            inherit_technology = ROOT
+            division_template = {
+                name = "Partisan Brigade"
+                regiments = {
+                    infantry = { x = 0 y = 0 }
+                    infantry = { x = 0 y = 1 }
+                    infantry = { x = 0 y = 2 }
+                    infantry = { x = 1 y = 0 }
+                    infantry = { x = 1 y = 1 }
+                }
+                support = {
+                    anti_tank = { x = 0 y = 0 }
+                    engineer = { x = 0 y = 1 }
+                }
+            }
+        }
+    }
+}
+
+tnor_2rjw_deploy_partisans = {
+    set_country_flag = tnor_2rjw_partisan_supply_closed
+    tnor_2rjw_deploy_partisan_country = { TARGET = MPS READY = tnor_2rjw_mongolia_divisions }
+    tnor_2rjw_deploy_partisan_country = { TARGET = FPS READY = tnor_2rjw_primorye_divisions }
+}
+
+tnor_2rjw_deploy_partisan_country = {
+    if = {
+        limit = {
+            country_exists = $TARGET$
+            check_variable = { $READY$ > 0 }
+        }
+        set_temp_variable = { tnor_2rjw_units_to_deploy = $READY$ }
+        $TARGET$ = {
+            capital_scope = {
+                # Normally the capital is an exempt city. If it moved, open its assembly area.
+                if = {
+                    limit = { has_state_flag = tnor_2rjw_partisan_dmz }
+                    set_demilitarized_zone = no
+                    clr_state_flag = tnor_2rjw_partisan_dmz
+                }
+                create_unit = {
+                    division = "division_template = \"Partisan Brigade\" start_equipment_factor = 1"
+                    owner = $TARGET$
+                    count = tnor_2rjw_units_to_deploy
+                }
+            }
+        }
+    }
+}
+
+tnor_2rjw_declare_eastern_war = {
+    set_country_flag = tnor_2rjw_eastern_war_started
+    every_state = {
+        limit = { has_state_flag = tnor_2rjw_partisan_dmz }
+        set_demilitarized_zone = no
+        clr_state_flag = tnor_2rjw_partisan_dmz
+    }
+    if = {
+        limit = { is_in_faction = no }
+        create_faction_from_template = {
+            template = faction_template_generic
+            name = collective_security_treaty_organization
+            icon = GFX_collective_security_treaty_organization
+        }
+        add_ideas = CSTO_Guardian_of_Eurasia
+    }
+    tnor_2rjw_admit_partisans = { TARGET = MPS }
+    tnor_2rjw_admit_partisans = { TARGET = FPS }
+    tnor_2rjw_open_eastern_front = { ENEMY = JAP }
+    tnor_2rjw_open_eastern_front = { ENEMY = MEN }
+    tnor_2rjw_open_eastern_front = { ENEMY = MAN }
+}
+
+tnor_2rjw_admit_partisans = {
+    if = {
+        limit = {
+            country_exists = $TARGET$
+            $TARGET$ = { NOT = { is_in_faction_with = ROOT } }
+        }
+        add_to_faction = $TARGET$
+        $TARGET$ = { add_ideas = CSTO_Member }
+    }
+}
+
+tnor_2rjw_open_eastern_front = {
+    if = {
+        limit = {
+            country_exists = $ENEMY$
+            $ENEMY$ = { NOT = { is_in_faction_with = ROOT } }
+        }
+        if = {
+            limit = { NOT = { has_war_with = $ENEMY$ } }
+            declare_war_on = { target = $ENEMY$ type = annex_everything }
+        }
+        tnor_2rjw_join_eastern_front = { TARGET = MPS ENEMY = $ENEMY$ }
+        tnor_2rjw_join_eastern_front = { TARGET = FPS ENEMY = $ENEMY$ }
+    }
+}
+
+tnor_2rjw_join_eastern_front = {
+    if = {
+        limit = {
+            has_war_with = $ENEMY$
+            country_exists = $TARGET$
+            $TARGET$ = { NOT = { has_war_with = $ENEMY$ } }
+        }
+        $TARGET$ = { add_to_war = { targeted_alliance = ROOT enemy = $ENEMY$ } }
+    }
+}

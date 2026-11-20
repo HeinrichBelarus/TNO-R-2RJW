@@ -1,0 +1,2 @@
+MPS = "countries/TNOR Mongolian Partisans.txt"
+FPS = "countries/TNOR Far Eastern Partisans.txt"

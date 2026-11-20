@@ -1,0 +1,10 @@
+tnor_2rjw_partisan_supply_category = {
+    icon = GFX_decision_category_infiltration
+    allowed = { original_tag = NOV }
+    visible = {
+        has_country_flag = tnor_2rjw_partisan_supply_open
+        NOT = { has_country_flag = tnor_2rjw_eastern_war_started }
+    }
+    visible_when_empty = yes
+    priority = 75
+}

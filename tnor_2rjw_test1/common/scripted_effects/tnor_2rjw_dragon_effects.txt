@@ -1,0 +1,77 @@
+# Called in the target country's scope. Leave any existing patron's bloc first.
+tnor_2rjw_detach_dragon_target = {
+    if = {
+        limit = { is_in_faction = yes }
+        if = {
+            limit = { is_faction_leader = yes }
+            dismantle_faction = yes
+        }
+        else = { leave_faction = yes }
+    }
+    if = {
+        limit = { is_subject = yes }
+        OVERLORD = { end_puppet = PREV }
+    }
+}
+
+tnor_2rjw_make_dragon_subject = {
+    tnor_2rjw_detach_dragon_target = yes
+    event_target:tnor_2rjw_campaign_russia = { puppet = PREV }
+}
+
+tnor_2rjw_send_dragon_proposal = {
+    if = {
+        limit = {
+            country_exists = $TARGET$
+            $TARGET$ = { NOT = { is_subject_of = ROOT } }
+        }
+        $TARGET$ = { country_event = { id = tnor_2rjw_dragon.2 } }
+    }
+}
+
+tnor_2rjw_open_dragon_war = {
+    if = {
+        limit = {
+            country_exists = $TARGET$
+            $TARGET$ = { NOT = { is_subject_of = ROOT } }
+        }
+        $TARGET$ = {
+            tnor_2rjw_detach_dragon_target = yes
+            set_country_flag = tnor_2rjw_dragon_war_target
+        }
+        if = {
+            limit = { NOT = { has_war_with = $TARGET$ } }
+            declare_war_on = { target = $TARGET$ type = puppet_wargoal_focus }
+        }
+        $TARGET$ = { country_event = { id = tnor_2rjw_dragon.6 } }
+    }
+}
+
+tnor_2rjw_launch_broken_dragon = {
+    tnor_2rjw_open_dragon_war = { TARGET = XIN }
+    tnor_2rjw_open_dragon_war = { TARGET = QIN }
+}
+
+tnor_2rjw_ratify_dragon_agreement = {
+    if = {
+        limit = {
+            country_exists = $TARGET$
+            $TARGET$ = {
+                has_country_flag = tnor_2rjw_dragon_accepted
+                NOT = { is_subject_of = ROOT }
+            }
+        }
+        $TARGET$ = {
+            clr_country_flag = tnor_2rjw_dragon_accepted
+            tnor_2rjw_make_dragon_subject = yes
+        }
+    }
+}
+
+tnor_2rjw_handle_dragon_capitulation = {
+    ROOT = {
+        clr_country_flag = tnor_2rjw_dragon_war_target
+        tnor_2rjw_make_dragon_subject = yes
+    }
+    event_target:tnor_2rjw_campaign_russia = { country_event = { id = tnor_2rjw_dragon.4 } }
+}

@@ -1,0 +1,3 @@
+capital = 1646
+set_politics = { ruling_party = despotism elections_allowed = no }
+set_popularities = { despotism = 100 }

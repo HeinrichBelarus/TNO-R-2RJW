@@ -1,0 +1,25 @@
+tnor_2rjw_partisan_supply_category = {
+    tnor_2rjw_supply_mongolia = {
+        icon = GFX_decision_generic_assault
+        cost = 0
+        visible = { NOT = { has_country_flag = tnor_2rjw_partisan_supply_closed } }
+        available = { tnor_2rjw_can_supply_partisans = yes }
+        ai_will_do = { factor = 0 }
+        complete_effect = {
+            tnor_2rjw_pay_partisan_supply_kit = yes
+            add_to_variable = { tnor_2rjw_mongolia_divisions = 1 }
+        }
+    }
+
+    tnor_2rjw_supply_primorye = {
+        icon = GFX_decision_generic_assault
+        cost = 0
+        visible = { NOT = { has_country_flag = tnor_2rjw_partisan_supply_closed } }
+        available = { tnor_2rjw_can_supply_partisans = yes }
+        ai_will_do = { factor = 0 }
+        complete_effect = {
+            tnor_2rjw_pay_partisan_supply_kit = yes
+            add_to_variable = { tnor_2rjw_primorye_divisions = 1 }
+        }
+    }
+}
