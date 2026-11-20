@@ -1,0 +1,425 @@
+focus_tree = {
+    id = tnor_2rjw_eastern_preparation
+    country = { factor = 0 }
+    default = no
+
+    # Keep the TEST1 survey ID as the opening focus for existing saves.
+
+    focus = {
+        id = TNOR_2RJW_survey_the_trans_siberian
+        icon = GFX_goal_unknown
+        cost = 0
+        x = 14
+        y = 0
+        ai_will_do = { factor = 1 }
+    }
+
+    focus = {
+        id = TNOR_2RJW_calm_before_the_storm
+        icon = GFX_goal_unknown
+        cost = 1
+        prerequisite = { focus = TNOR_2RJW_survey_the_trans_siberian }
+        x = 14
+        y = 1
+        ai_will_do = { factor = 1 }
+    }
+
+    focus = {
+        id = TNOR_2RJW_establish_the_railway_modernisation_committee
+        icon = GFX_goal_unknown
+        cost = 1
+        prerequisite = { focus = TNOR_2RJW_calm_before_the_storm }
+        x = 0
+        y = 2
+        ai_will_do = { factor = 1 }
+    }
+
+    focus = {
+        id = TNOR_2RJW_every_hand_to_the_rails
+        icon = GFX_goal_unknown
+        cost = 1.429
+        prerequisite = { focus = TNOR_2RJW_establish_the_railway_modernisation_committee }
+        x = 0
+        y = 3
+        ai_will_do = { factor = 1 }
+    }
+
+    focus = {
+        id = TNOR_2RJW_no_time_to_waste
+        icon = GFX_goal_unknown
+        cost = 1.429
+        prerequisite = { focus = TNOR_2RJW_every_hand_to_the_rails }
+        x = 0
+        y = 4
+        ai_will_do = { factor = 1 }
+    }
+
+    focus = {
+        id = TNOR_2RJW_acquire_more_locomotives
+        icon = GFX_goal_unknown
+        cost = 1.429
+        prerequisite = { focus = TNOR_2RJW_no_time_to_waste }
+        x = 0
+        y = 5
+        ai_will_do = { factor = 1 }
+    }
+
+    focus = {
+        id = TNOR_2RJW_the_railway_to_retribution
+        icon = GFX_goal_unknown
+        cost = 2.858
+        prerequisite = { focus = TNOR_2RJW_acquire_more_locomotives }
+        x = 0
+        y = 6
+        ai_will_do = { factor = 1 }
+    }
+
+    focus = {
+        id = TNOR_2RJW_the_logistics_of_conquest
+        icon = GFX_goal_unknown
+        cost = 1
+        prerequisite = { focus = TNOR_2RJW_calm_before_the_storm }
+        x = 5
+        y = 2
+        ai_will_do = { factor = 1 }
+    }
+
+    focus = {
+        id = TNOR_2RJW_the_lifeblood_of_war
+        icon = GFX_goal_unknown
+        cost = 2.143
+        prerequisite = { focus = TNOR_2RJW_the_logistics_of_conquest }
+        x = 3
+        y = 3
+        ai_will_do = { factor = 1 }
+    }
+
+    focus = {
+        id = TNOR_2RJW_steel_horses_of_siberia
+        icon = GFX_goal_unknown
+        cost = 2.143
+        prerequisite = { focus = TNOR_2RJW_the_lifeblood_of_war }
+        x = 3
+        y = 4
+        ai_will_do = { factor = 1 }
+    }
+
+    focus = {
+        id = TNOR_2RJW_a_network_of_supply
+        icon = GFX_goal_unknown
+        cost = 2.143
+        prerequisite = { focus = TNOR_2RJW_the_logistics_of_conquest }
+        x = 7
+        y = 3
+        ai_will_do = { factor = 1 }
+    }
+
+    focus = {
+        id = TNOR_2RJW_fill_the_depots
+        icon = GFX_goal_unknown
+        cost = 2.143
+        prerequisite = { focus = TNOR_2RJW_a_network_of_supply }
+        x = 7
+        y = 4
+        ai_will_do = { factor = 1 }
+    }
+
+    focus = {
+        id = TNOR_2RJW_no_distance_too_great
+        icon = GFX_goal_unknown
+        cost = 1
+        prerequisite = { focus = TNOR_2RJW_steel_horses_of_siberia }
+        prerequisite = { focus = TNOR_2RJW_fill_the_depots }
+        x = 5
+        y = 5
+        ai_will_do = { factor = 1 }
+    }
+
+    focus = {
+        id = TNOR_2RJW_the_long_road_east
+        icon = GFX_goal_unknown
+        cost = 1
+        prerequisite = { focus = TNOR_2RJW_no_distance_too_great }
+        x = 5
+        y = 6
+        ai_will_do = { factor = 1 }
+    }
+
+    focus = {
+        id = TNOR_2RJW_a_shadow_falls_upon_the_east
+        icon = GFX_goal_unknown
+        cost = 2.858
+        prerequisite = { focus = TNOR_2RJW_calm_before_the_storm }
+        x = 11
+        y = 2
+        ai_will_do = { factor = 1 }
+    }
+
+    focus = {
+        id = TNOR_2RJW_a_thousand_eyes_across_the_border
+        icon = GFX_goal_unknown
+        cost = 2.858
+        prerequisite = { focus = TNOR_2RJW_a_shadow_falls_upon_the_east }
+        x = 11
+        y = 3
+        ai_will_do = { factor = 1 }
+    }
+
+    focus = {
+        id = TNOR_2RJW_a_silent_hatred
+        icon = GFX_goal_unknown
+        cost = 1
+        prerequisite = { focus = TNOR_2RJW_a_thousand_eyes_across_the_border }
+        x = 9
+        y = 4
+        ai_will_do = { factor = 1 }
+    }
+
+    focus = {
+        id = TNOR_2RJW_the_invisible_hand
+        icon = GFX_goal_unknown
+        cost = 2.858
+        prerequisite = { focus = TNOR_2RJW_a_thousand_eyes_across_the_border }
+        x = 13
+        y = 4
+        ai_will_do = { factor = 1 }
+    }
+
+    focus = {
+        id = TNOR_2RJW_a_dagger_at_their_throat
+        icon = GFX_goal_unknown
+        cost = 1
+        prerequisite = { focus = TNOR_2RJW_a_silent_hatred }
+        prerequisite = { focus = TNOR_2RJW_the_invisible_hand }
+        x = 11
+        y = 5
+        ai_will_do = { factor = 1 }
+    }
+
+    focus = {
+        id = TNOR_2RJW_across_the_pacific
+        icon = GFX_goal_unknown
+        cost = 1
+        prerequisite = { focus = TNOR_2RJW_calm_before_the_storm }
+        x = 17
+        y = 2
+        ai_will_do = { factor = 1 }
+    }
+
+    focus = {
+        id = TNOR_2RJW_the_scars_we_carry
+        icon = GFX_goal_unknown
+        cost = 1
+        prerequisite = { focus = TNOR_2RJW_across_the_pacific }
+        x = 17
+        y = 3
+        ai_will_do = { factor = 1 }
+    }
+
+    focus = {
+        id = TNOR_2RJW_behind_closed_doors
+        icon = GFX_goal_unknown
+        cost = 1
+        prerequisite = { focus = TNOR_2RJW_the_scars_we_carry }
+        x = 17
+        y = 4
+        ai_will_do = { factor = 1 }
+    }
+
+    focus = {
+        id = TNOR_2RJW_different_shores_the_same_scars
+        icon = GFX_goal_unknown
+        cost = 1
+        prerequisite = { focus = TNOR_2RJW_behind_closed_doors }
+        x = 17
+        y = 5
+        ai_will_do = { factor = 1 }
+    }
+
+    focus = {
+        id = TNOR_2RJW_arsenal_of_democracy
+        icon = GFX_goal_unknown
+        cost = 1
+        prerequisite = { focus = TNOR_2RJW_different_shores_the_same_scars }
+        x = 17
+        y = 6
+        ai_will_do = { factor = 1 }
+    }
+
+    focus = {
+        id = TNOR_2RJW_the_tiger_and_the_bear
+        icon = GFX_goal_unknown
+        cost = 1
+        prerequisite = { focus = TNOR_2RJW_arsenal_of_democracy }
+        x = 17
+        y = 7
+        ai_will_do = { factor = 1 }
+    }
+
+    focus = {
+        id = TNOR_2RJW_friends_at_the_edge_of_the_world
+        icon = GFX_goal_unknown
+        cost = 1
+        prerequisite = { focus = TNOR_2RJW_the_tiger_and_the_bear }
+        x = 17
+        y = 8
+        ai_will_do = { factor = 1 }
+    }
+
+    focus = {
+        id = TNOR_2RJW_now_let_the_guns_speak
+        icon = GFX_goal_unknown
+        cost = 1
+        prerequisite = { focus = TNOR_2RJW_friends_at_the_edge_of_the_world }
+        x = 17
+        y = 9
+        ai_will_do = { factor = 1 }
+    }
+
+    focus = {
+        id = TNOR_2RJW_our_industrial_might
+        icon = GFX_goal_unknown
+        cost = 1
+        prerequisite = { focus = TNOR_2RJW_calm_before_the_storm }
+        x = 24
+        y = 2
+        ai_will_do = { factor = 1 }
+    }
+
+    focus = {
+        id = TNOR_2RJW_the_riches_beneath_our_feet
+        icon = GFX_goal_unknown
+        cost = 2.143
+        prerequisite = { focus = TNOR_2RJW_our_industrial_might }
+        x = 20
+        y = 3
+        ai_will_do = { factor = 1 }
+    }
+
+    focus = {
+        id = TNOR_2RJW_fuel_for_the_coming_storm
+        icon = GFX_goal_unknown
+        cost = 2.143
+        prerequisite = { focus = TNOR_2RJW_the_riches_beneath_our_feet }
+        x = 20
+        y = 4
+        ai_will_do = { factor = 1 }
+    }
+
+    focus = {
+        id = TNOR_2RJW_every_ton_counts
+        icon = GFX_goal_unknown
+        cost = 2.143
+        prerequisite = { focus = TNOR_2RJW_fuel_for_the_coming_storm }
+        x = 20
+        y = 5
+        ai_will_do = { factor = 1 }
+    }
+
+    focus = {
+        id = TNOR_2RJW_blood_sweat_and_iron
+        icon = GFX_goal_unknown
+        cost = 2.143
+        prerequisite = { focus = TNOR_2RJW_every_ton_counts }
+        x = 20
+        y = 6
+        ai_will_do = { factor = 1 }
+    }
+
+    focus = {
+        id = TNOR_2RJW_the_assembly_lines_never_sleep
+        icon = GFX_goal_unknown
+        cost = 2.143
+        prerequisite = { focus = TNOR_2RJW_our_industrial_might }
+        x = 24
+        y = 3
+        ai_will_do = { factor = 1 }
+    }
+
+    focus = {
+        id = TNOR_2RJW_the_furnaces_burn_brighter
+        icon = GFX_goal_unknown
+        cost = 2.143
+        prerequisite = { focus = TNOR_2RJW_the_assembly_lines_never_sleep }
+        x = 24
+        y = 4
+        ai_will_do = { factor = 1 }
+    }
+
+    focus = {
+        id = TNOR_2RJW_built_to_kill_built_to_last
+        icon = GFX_goal_unknown
+        cost = 2.143
+        prerequisite = { focus = TNOR_2RJW_the_furnaces_burn_brighter }
+        x = 24
+        y = 5
+        ai_will_do = { factor = 1 }
+    }
+
+    focus = {
+        id = TNOR_2RJW_the_sound_of_a_thousand_hammers
+        icon = GFX_goal_unknown
+        cost = 2.143
+        prerequisite = { focus = TNOR_2RJW_built_to_kill_built_to_last }
+        x = 24
+        y = 6
+        ai_will_do = { factor = 1 }
+    }
+
+    focus = {
+        id = TNOR_2RJW_do_russians_want_war
+        icon = GFX_goal_unknown
+        cost = 2.143
+        prerequisite = { focus = TNOR_2RJW_our_industrial_might }
+        x = 28
+        y = 3
+        ai_will_do = { factor = 1 }
+    }
+
+    focus = {
+        id = TNOR_2RJW_yet_another_war
+        icon = GFX_goal_unknown
+        cost = 2.143
+        prerequisite = { focus = TNOR_2RJW_do_russians_want_war }
+        x = 28
+        y = 4
+        ai_will_do = { factor = 1 }
+    }
+
+    focus = {
+        id = TNOR_2RJW_peace_will_have_to_wait
+        icon = GFX_goal_unknown
+        cost = 2.143
+        prerequisite = { focus = TNOR_2RJW_yet_another_war }
+        x = 28
+        y = 5
+        ai_will_do = { factor = 1 }
+    }
+
+    focus = {
+        id = TNOR_2RJW_for_the_sake_of_a_free_tomorrow
+        icon = GFX_goal_unknown
+        cost = 2.143
+        prerequisite = { focus = TNOR_2RJW_peace_will_have_to_wait }
+        x = 28
+        y = 6
+        ai_will_do = { factor = 1 }
+    }
+
+    focus = {
+        id = TNOR_2RJW_the_storm_takes_shape
+        icon = GFX_goal_unknown
+        cost = 0
+        prerequisite = { focus = TNOR_2RJW_the_railway_to_retribution }
+        prerequisite = { focus = TNOR_2RJW_the_long_road_east }
+        prerequisite = { focus = TNOR_2RJW_a_dagger_at_their_throat }
+        prerequisite = { focus = TNOR_2RJW_now_let_the_guns_speak }
+        prerequisite = { focus = TNOR_2RJW_blood_sweat_and_iron }
+        prerequisite = { focus = TNOR_2RJW_the_sound_of_a_thousand_hammers }
+        prerequisite = { focus = TNOR_2RJW_for_the_sake_of_a_free_tomorrow }
+        x = 14
+        y = 10
+        ai_will_do = { factor = 1 }
+        completion_reward = { load_focus_tree = { tree = tnor_2rjw_eastern_preparation_stage_2 keep_completed = yes } }
+    }
+}

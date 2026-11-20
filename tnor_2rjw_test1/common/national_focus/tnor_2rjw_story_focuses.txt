@@ -43,24 +43,6 @@ shared_focus = {
     completion_reward = { tnor_2rjw_start_eastern_preparation = yes }
 }
 
-focus_tree = {
-    id = tnor_2rjw_eastern_preparation
-    country = { factor = 0 }
-    default = no
-
-    focus = {
-        id = TNOR_2RJW_survey_the_trans_siberian
-        icon = GFX_focus_generic_railway_work
-        cost = 1
-        x = 6
-        y = 0
-        ai_will_do = { factor = 1 }
-        completion_reward = {
-            set_country_flag = tnor_2rjw_trans_siberian_surveyed
-        }
-    }
-}
-
 shared_focus = {
     id = NOV_look_to_the_west
     icon = GFX_focus_generic_railway_work

@@ -1,12 +1,6 @@
 on_actions = {
     on_startup = {
         effect = {
-            GER = {
-                set_portraits = {
-                    character = GER_adolf_hitler
-                    civilian = { large = GFX_tnor_test_portrait }
-                }
-            }
             BRA = {
                 if = {
                     limit = {

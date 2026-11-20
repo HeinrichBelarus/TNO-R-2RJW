@@ -1,0 +1,84 @@
+focus_tree = {
+    id = tnor_2rjw_eastern_preparation_stage_3
+    country = { factor = 0 }
+    default = no
+
+    focus = {
+        id = TNOR_2RJW_let_the_seas_boil
+        icon = GFX_goal_unknown
+        cost = 1
+        x = 6
+        y = 0
+        ai_will_do = { factor = 1 }
+    }
+
+    focus = {
+        id = TNOR_2RJW_let_the_stars_fall
+        icon = GFX_goal_unknown
+        cost = 1
+        prerequisite = { focus = TNOR_2RJW_let_the_seas_boil }
+        x = 6
+        y = 1
+        ai_will_do = { factor = 1 }
+    }
+
+    focus = {
+        id = TNOR_2RJW_let_the_heavens_tremble
+        icon = GFX_goal_unknown
+        cost = 1
+        prerequisite = { focus = TNOR_2RJW_let_the_stars_fall }
+        x = 6
+        y = 2
+        ai_will_do = { factor = 1 }
+    }
+
+    focus = {
+        id = TNOR_2RJW_even_if_it_takes_every_last_drop_of_our_blood
+        icon = GFX_goal_unknown
+        cost = 1
+        prerequisite = { focus = TNOR_2RJW_let_the_heavens_tremble }
+        x = 6
+        y = 3
+        ai_will_do = { factor = 1 }
+    }
+
+    focus = {
+        id = TNOR_2RJW_we_shall_see_the_east_free_once_more
+        icon = GFX_goal_unknown
+        cost = 1
+        prerequisite = { focus = TNOR_2RJW_even_if_it_takes_every_last_drop_of_our_blood }
+        x = 6
+        y = 4
+        ai_will_do = { factor = 1 }
+    }
+
+    focus = {
+        id = TNOR_2RJW_the_rising_sun_shall_set
+        icon = GFX_goal_unknown
+        cost = 1
+        prerequisite = { focus = TNOR_2RJW_we_shall_see_the_east_free_once_more }
+        x = 6
+        y = 5
+        ai_will_do = { factor = 1 }
+    }
+
+    focus = {
+        id = TNOR_2RJW_forevermore
+        icon = GFX_goal_unknown
+        cost = 1
+        prerequisite = { focus = TNOR_2RJW_the_rising_sun_shall_set }
+        x = 6
+        y = 6
+        ai_will_do = { factor = 1 }
+    }
+
+    focus = {
+        id = TNOR_2RJW_the_storm_begins
+        icon = GFX_goal_unknown
+        cost = 0
+        prerequisite = { focus = TNOR_2RJW_forevermore }
+        x = 6
+        y = 7
+        ai_will_do = { factor = 1 }
+    }
+}

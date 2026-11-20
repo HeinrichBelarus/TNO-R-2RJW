@@ -1,12 +1,10 @@
 ﻿l_english:
  TNOR_2RJW_secret_meeting:0 "A secret meeting"
  TNOR_2RJW_secret_meeting_desc:0 "The General Staff meets behind closed doors to decide which frontier will command Russia's attention."
- TNOR_2RJW_march_east:0 "March East"
+ TNOR_2RJW_march_east:0 "Eye to the east"
  TNOR_2RJW_march_east_desc:0 "Begin preparations for an eastern campaign. At least 730 days must pass before hostilities can begin."
  TNOR_2RJW_return_to_eastern_question:0 "Return to the Eastern Question"
  TNOR_2RJW_return_to_eastern_question_desc:0 "Peace in the west and the conclusion of reconstruction and elections allow us to reopen the eastern question."
- TNOR_2RJW_survey_the_trans_siberian:0 "Survey the Trans-Siberian Railway"
- TNOR_2RJW_survey_the_trans_siberian_desc:0 "Commission a study of the railway's capacity, bottlenecks and repair requirements."
  tnor_2rjw_story.1.t:0 "Behind Closed Doors"
  tnor_2rjw_story.1.d:0 "The officers spread two maps across the table. The first showed the roads west and the territories still under German rule. The second followed a single railway east to the coast. The chairman asked which map should stay on the table."
  tnor_2rjw_story.1.a:0 "The General Staff will have its answer."
