@@ -1,0 +1,5 @@
+tnor_2rjw_start_eastern_preparation = {
+    set_country_flag = tnor_2rjw_east_started
+    set_country_flag = { flag = tnor_2rjw_eastern_preparation_minimum days = 730 }
+    load_focus_tree = { tree = tnor_2rjw_eastern_preparation keep_completed = yes }
+}

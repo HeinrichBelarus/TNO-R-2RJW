@@ -1,0 +1,76 @@
+shared_focus = {
+    id = TNOR_2RJW_secret_meeting
+    icon = GFX_focus_generic_railway_work
+    cost = 1
+    available_if_capitulated = no
+    prerequisite = { focus = NOV_shukshin_sunshine_in_central_asia }
+    prerequisite = { focus = NOV_develop_the_murmansk_railway }
+    allow_branch = { tnor_2rjw_meeting_ready = yes }
+    available = { tnor_2rjw_meeting_ready = yes }
+    x = 0
+    y = 1
+    relative_position_id = NOV_shukshin_sunshine_in_central_asia
+    ai_will_do = { factor = 1 }
+    completion_reward = {
+        country_event = { id = tnor_2rjw_story.1 }
+    }
+}
+
+shared_focus = {
+    id = TNOR_2RJW_march_east
+    icon = GFX_focus_generic_railway_work
+    cost = 1
+    available_if_capitulated = no
+    prerequisite = { focus = TNOR_2RJW_secret_meeting }
+    mutually_exclusive = { focus = NOV_look_to_the_west }
+    x = 2
+    y = 1
+    relative_position_id = TNOR_2RJW_secret_meeting
+    ai_will_do = { factor = 0 }
+    completion_reward = { tnor_2rjw_start_eastern_preparation = yes }
+}
+
+shared_focus = {
+    id = TNOR_2RJW_return_to_eastern_question
+    icon = GFX_focus_generic_railway_work
+    cost = 1
+    available_if_capitulated = no
+    allow_branch = { tnor_2rjw_deferred_east_ready = yes }
+    available = { tnor_2rjw_deferred_east_ready = yes }
+    x = 42
+    y = 15
+    ai_will_do = { factor = 0 }
+    completion_reward = { tnor_2rjw_start_eastern_preparation = yes }
+}
+
+focus_tree = {
+    id = tnor_2rjw_eastern_preparation
+    country = { factor = 0 }
+    default = no
+
+    focus = {
+        id = TNOR_2RJW_survey_the_trans_siberian
+        icon = GFX_focus_generic_railway_work
+        cost = 1
+        x = 6
+        y = 0
+        ai_will_do = { factor = 1 }
+        completion_reward = {
+            set_country_flag = tnor_2rjw_trans_siberian_surveyed
+        }
+    }
+}
+
+shared_focus = {
+    id = NOV_look_to_the_west
+    icon = GFX_focus_generic_railway_work
+    cost = 1
+    available_if_capitulated = no
+    prerequisite = { focus = TNOR_2RJW_secret_meeting }
+    mutually_exclusive = { focus = TNOR_2RJW_march_east }
+    x = -2
+    y = 1
+    relative_position_id = TNOR_2RJW_secret_meeting
+    ai_will_do = { factor = 1 }
+    completion_reward = { country_event = { id = tnor_2rjw_story.2 } }
+}

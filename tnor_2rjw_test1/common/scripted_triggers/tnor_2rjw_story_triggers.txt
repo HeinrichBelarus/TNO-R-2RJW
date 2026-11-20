@@ -1,0 +1,20 @@
+tnor_2rjw_meeting_ready = {
+    has_completed_focus = NOV_shukshin_the_russian_dream
+    has_completed_focus = NOV_shukshin_sunshine_in_central_asia
+    has_completed_focus = NOV_develop_the_murmansk_railway
+}
+
+tnor_2rjw_deferred_east_ready = {
+    has_country_flag = tnor_2rjw_west_deferred
+    has_global_flag = RUS_2WRW_Victory
+    has_global_flag = RUS_2WRW_End
+    has_country_flag = NOV_Finished_Reconstruction
+    check_variable = { NOV_Election_Num > 0 }
+    NOT = {
+        OR = {
+            has_country_flag = NOV_elections_ongoing
+            has_country_flag = tnor_2rjw_west_diplomacy
+            has_country_flag = tnor_2rjw_east_started
+        }
+    }
+}
