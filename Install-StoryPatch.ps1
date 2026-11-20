@@ -74,7 +74,14 @@ $shared = Edit-SharedFocus 'NOV_approach_the_sphere' {
         "`n`t`tload_focus_tree = NOV_novosibirsk_war_preparation_shukshin`n`t}`n}")
 }
 
-# Hide the West China War branch; keep its sibling Mongolia and other proxy conflicts intact.
+# Hide the old eastern policy branch, which led only to West China War and Mongolian Uprising.
+$shared = Edit-SharedFocus 'NOV_our_eyes_to_the_east' {
+    param($focus)
+    $focus = Replace-One $focus '(?m)^\t#allow_branch = \{\n[\s\S]*?^\t#\}' (
+        "`tallow_branch = { always = no }")
+    Replace-One $focus '(?m)^\t\thidden_effect = \{\n\t\t\tSWRW_TMM_Temp_Helper = yes\n\t\t\}\n' ''
+}
+# This child has its own visibility rule, so it must also be hidden explicitly.
 $shared = Edit-SharedFocus 'NOV_an_alliance_with_the_clique' {
     param($focus)
     Replace-One $focus '(?m)^\tallow_branch = \{\n[\s\S]*?^\t\}' (
@@ -87,12 +94,30 @@ $shared = Edit-SharedFocus 'NOV_establish_the_west_chinese_republic' {
     Replace-One $focus '(?m)^\t\t\tSWRW_start_west_china_war = yes[ \t]*\n' ''
 }
 
+# Keep the focus IDs for saves while removing scripted preparation and territorial transfers.
+foreach ($id in @(
+    'NOV_our_brothers_in_mongolia',
+    'NOV_rally_the_nomads',
+    'NOV_friends_in_ulaanbaatar',
+    'NOV_the_mongolian_rebellion'
+)) {
+    $shared = Edit-SharedFocus $id {
+        param($focus)
+        Replace-One $focus '(?m)^\tcompletion_reward = \{\n[\s\S]*?^\t\}' (
+            "`tcompletion_reward = {}")
+    }
+}
+
 $treePath = 'common/national_focus/2WRW_Shukshin.txt'
 $trees = Replace-One (Read-RequiemFile $treePath) '(?m)^\tshared_focus = NOV_our_next_challenge[ \t]*$' (
     "`tshared_focus = NOV_our_next_challenge`n`tshared_focus = TNOR_2RJW_return_to_eastern_question")
 
 $debugPath = 'common/decisions/Requiem_Debug_decisions.txt'
-$debug = Replace-One (Read-RequiemFile $debugPath) '(?m)^\tNOV_WCW_debug\s*=\s*\{[^\n]*\n[\s\S]*?^\t\}\n' ''
+$debug = Read-RequiemFile $debugPath
+foreach ($id in @('NOV_WCW_debug', 'NOV_MU_debug')) {
+    $pattern = '(?m)^\t' + $id + '\s*=\s*\{[^\n]*\n[\s\S]*?^\t\}\n'
+    $debug = Replace-One $debug $pattern ''
+}
 
 # Validate every original anchor before writing anything to the installed submod.
 New-Item -ItemType Directory -Path $InstallPath -Force | Out-Null
