@@ -153,7 +153,11 @@ focus_tree = {
         y = 3
         ai_will_do = { factor = 1 }
         completion_reward = {
-            tnor_2rjw_upgrade_spirit = { OLD = tnor_2rjw_steel_fist_1 NEW = tnor_2rjw_steel_fist_2 }
+            if = {
+                limit = { has_idea = tnor_2rjw_steel_fist_1 }
+                swap_ideas = { remove_idea = tnor_2rjw_steel_fist_1 add_idea = tnor_2rjw_steel_fist_2 }
+            }
+            else = { add_ideas = tnor_2rjw_steel_fist_2 }
         }
     }
 
@@ -166,7 +170,11 @@ focus_tree = {
         y = 4
         ai_will_do = { factor = 1 }
         completion_reward = {
-            tnor_2rjw_upgrade_spirit = { OLD = tnor_2rjw_steel_fist_2 NEW = tnor_2rjw_steel_fist_3 }
+            if = {
+                limit = { has_idea = tnor_2rjw_steel_fist_2 }
+                swap_ideas = { remove_idea = tnor_2rjw_steel_fist_2 add_idea = tnor_2rjw_steel_fist_3 }
+            }
+            else = { add_ideas = tnor_2rjw_steel_fist_3 }
         }
     }
 
@@ -192,7 +200,11 @@ focus_tree = {
         y = 3
         ai_will_do = { factor = 1 }
         completion_reward = {
-            tnor_2rjw_upgrade_spirit = { OLD = tnor_2rjw_backbone_1 NEW = tnor_2rjw_backbone_2 }
+            if = {
+                limit = { has_idea = tnor_2rjw_backbone_1 }
+                swap_ideas = { remove_idea = tnor_2rjw_backbone_1 add_idea = tnor_2rjw_backbone_2 }
+            }
+            else = { add_ideas = tnor_2rjw_backbone_2 }
         }
     }
 
@@ -205,7 +217,11 @@ focus_tree = {
         y = 4
         ai_will_do = { factor = 1 }
         completion_reward = {
-            tnor_2rjw_upgrade_spirit = { OLD = tnor_2rjw_backbone_2 NEW = tnor_2rjw_backbone_3 }
+            if = {
+                limit = { has_idea = tnor_2rjw_backbone_2 }
+                swap_ideas = { remove_idea = tnor_2rjw_backbone_2 add_idea = tnor_2rjw_backbone_3 }
+            }
+            else = { add_ideas = tnor_2rjw_backbone_3 }
         }
     }
 
@@ -278,7 +294,11 @@ focus_tree = {
         y = 3
         ai_will_do = { factor = 1 }
         completion_reward = {
-            tnor_2rjw_upgrade_spirit = { OLD = tnor_2rjw_blueprint_1 NEW = tnor_2rjw_blueprint_2 }
+            if = {
+                limit = { has_idea = tnor_2rjw_blueprint_1 }
+                swap_ideas = { remove_idea = tnor_2rjw_blueprint_1 add_idea = tnor_2rjw_blueprint_2 }
+            }
+            else = { add_ideas = tnor_2rjw_blueprint_2 }
         }
     }
 
@@ -291,7 +311,11 @@ focus_tree = {
         y = 4
         ai_will_do = { factor = 1 }
         completion_reward = {
-            tnor_2rjw_upgrade_spirit = { OLD = tnor_2rjw_blueprint_2 NEW = tnor_2rjw_blueprint_3 }
+            if = {
+                limit = { has_idea = tnor_2rjw_blueprint_2 }
+                swap_ideas = { remove_idea = tnor_2rjw_blueprint_2 add_idea = tnor_2rjw_blueprint_3 }
+            }
+            else = { add_ideas = tnor_2rjw_blueprint_3 }
         }
     }
 

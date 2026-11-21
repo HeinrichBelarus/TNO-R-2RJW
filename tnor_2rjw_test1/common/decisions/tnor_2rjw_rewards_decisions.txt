@@ -11,7 +11,8 @@ tnor_2rjw_arsenal = {
         custom_cost_text = tnor_2rjw_arsenal_cost_25
         ai_will_do = { factor = 0 }
         complete_effect = {
-            tnor_2rjw_pay_american_suppliers = { PRICE = 0.025 }
+            set_temp_variable = { tnor_2rjw_purchase_price = 0.025 }
+            tnor_2rjw_pay_american_suppliers = yes
             add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 800 producer = USA }
         }
     }
@@ -28,7 +29,8 @@ tnor_2rjw_arsenal = {
         custom_cost_text = tnor_2rjw_arsenal_cost_50
         ai_will_do = { factor = 0 }
         complete_effect = {
-            tnor_2rjw_pay_american_suppliers = { PRICE = 0.050 }
+            set_temp_variable = { tnor_2rjw_purchase_price = 0.050 }
+            tnor_2rjw_pay_american_suppliers = yes
             add_equipment_to_stockpile = { type = support_equipment_1 amount = 250 producer = USA }
         }
     }
@@ -45,7 +47,8 @@ tnor_2rjw_arsenal = {
         custom_cost_text = tnor_2rjw_arsenal_cost_75
         ai_will_do = { factor = 0 }
         complete_effect = {
-            tnor_2rjw_pay_american_suppliers = { PRICE = 0.075 }
+            set_temp_variable = { tnor_2rjw_purchase_price = 0.075 }
+            tnor_2rjw_pay_american_suppliers = yes
             add_equipment_to_stockpile = { type = artillery_equipment_1 amount = 100 producer = USA }
         }
     }
@@ -62,7 +65,8 @@ tnor_2rjw_arsenal = {
         custom_cost_text = tnor_2rjw_arsenal_cost_100
         ai_will_do = { factor = 0 }
         complete_effect = {
-            tnor_2rjw_pay_american_suppliers = { PRICE = 0.100 }
+            set_temp_variable = { tnor_2rjw_purchase_price = 0.100 }
+            tnor_2rjw_pay_american_suppliers = yes
             add_equipment_to_stockpile = { type = motorized_equipment_1 amount = 300 producer = USA }
         }
     }
@@ -79,7 +83,8 @@ tnor_2rjw_arsenal = {
         custom_cost_text = tnor_2rjw_arsenal_cost_25
         ai_will_do = { factor = 0 }
         complete_effect = {
-            tnor_2rjw_pay_american_suppliers = { PRICE = 0.025 }
+            set_temp_variable = { tnor_2rjw_purchase_price = 0.025 }
+            tnor_2rjw_pay_american_suppliers = yes
             add_equipment_to_stockpile = { type = anti_tank_equipment_1 amount = 250 producer = USA }
         }
     }
@@ -96,7 +101,8 @@ tnor_2rjw_arsenal = {
         custom_cost_text = tnor_2rjw_arsenal_cost_125
         ai_will_do = { factor = 0 }
         complete_effect = {
-            tnor_2rjw_pay_american_suppliers = { PRICE = 0.125 }
+            set_temp_variable = { tnor_2rjw_purchase_price = 0.125 }
+            tnor_2rjw_pay_american_suppliers = yes
             add_equipment_to_stockpile = { type = MBT_equipment_1 amount = 50 producer = USA }
         }
     }
@@ -113,7 +119,8 @@ tnor_2rjw_arsenal = {
         custom_cost_text = tnor_2rjw_arsenal_cost_125
         ai_will_do = { factor = 0 }
         complete_effect = {
-            tnor_2rjw_pay_american_suppliers = { PRICE = 0.125 }
+            set_temp_variable = { tnor_2rjw_purchase_price = 0.125 }
+            tnor_2rjw_pay_american_suppliers = yes
             add_equipment_to_stockpile = { type = IFV_equipment_1 amount = 100 producer = USA }
         }
     }
@@ -130,7 +137,8 @@ tnor_2rjw_arsenal = {
         custom_cost_text = tnor_2rjw_arsenal_cost_200
         ai_will_do = { factor = 0 }
         complete_effect = {
-            tnor_2rjw_pay_american_suppliers = { PRICE = 0.200 }
+            set_temp_variable = { tnor_2rjw_purchase_price = 0.200 }
+            tnor_2rjw_pay_american_suppliers = yes
             add_equipment_to_stockpile = { type = jet_fighter_equipment_2 amount = 20 producer = USA }
         }
     }
@@ -147,7 +155,8 @@ tnor_2rjw_arsenal = {
         custom_cost_text = tnor_2rjw_arsenal_cost_200
         ai_will_do = { factor = 0 }
         complete_effect = {
-            tnor_2rjw_pay_american_suppliers = { PRICE = 0.200 }
+            set_temp_variable = { tnor_2rjw_purchase_price = 0.200 }
+            tnor_2rjw_pay_american_suppliers = yes
             add_equipment_to_stockpile = { type = jet_CAS_equipment_2 amount = 20 producer = USA }
         }
     }
@@ -164,7 +173,8 @@ tnor_2rjw_arsenal = {
         custom_cost_text = tnor_2rjw_arsenal_cost_200
         ai_will_do = { factor = 0 }
         complete_effect = {
-            tnor_2rjw_pay_american_suppliers = { PRICE = 0.200 }
+            set_temp_variable = { tnor_2rjw_purchase_price = 0.200 }
+            tnor_2rjw_pay_american_suppliers = yes
             add_equipment_to_stockpile = { type = convoy_1 amount = 50 producer = USA }
         }
     }
@@ -195,7 +205,10 @@ tnor_2rjw_resource_development = {
             }
         }
         ai_will_do = { factor = 0 }
-        complete_effect = { tnor_2rjw_develop_resource_deposit = { REGION = tnor_2rjw_in_western_russia } }
+        complete_effect = {
+            set_temp_variable = { tnor_2rjw_resource_region = 1 }
+            tnor_2rjw_develop_resource_deposit = yes
+        }
     }
 
     tnor_2rjw_exploit_western_siberia = {
@@ -208,7 +221,10 @@ tnor_2rjw_resource_development = {
             }
         }
         ai_will_do = { factor = 0 }
-        complete_effect = { tnor_2rjw_develop_resource_deposit = { REGION = tnor_2rjw_in_western_siberia } }
+        complete_effect = {
+            set_temp_variable = { tnor_2rjw_resource_region = 2 }
+            tnor_2rjw_develop_resource_deposit = yes
+        }
     }
 
     tnor_2rjw_exploit_siberia = {
@@ -221,7 +237,10 @@ tnor_2rjw_resource_development = {
             }
         }
         ai_will_do = { factor = 0 }
-        complete_effect = { tnor_2rjw_develop_resource_deposit = { REGION = tnor_2rjw_in_siberia } }
+        complete_effect = {
+            set_temp_variable = { tnor_2rjw_resource_region = 3 }
+            tnor_2rjw_develop_resource_deposit = yes
+        }
     }
 
     tnor_2rjw_exploit_far_east = {
@@ -234,7 +253,10 @@ tnor_2rjw_resource_development = {
             }
         }
         ai_will_do = { factor = 0 }
-        complete_effect = { tnor_2rjw_develop_resource_deposit = { REGION = tnor_2rjw_in_far_east } }
+        complete_effect = {
+            set_temp_variable = { tnor_2rjw_resource_region = 4 }
+            tnor_2rjw_develop_resource_deposit = yes
+        }
     }
 }
 

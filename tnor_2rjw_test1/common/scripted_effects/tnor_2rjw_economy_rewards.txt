@@ -2,11 +2,11 @@
 tnor_2rjw_pay_american_suppliers = {
     add_command_power = -5
     hidden_effect = {
-        set_temp_variable = { money_reserves_temp = $PRICE$ }
+        set_temp_variable = { money_reserves_temp = tnor_2rjw_purchase_price }
         multiply_temp_variable = { money_reserves_temp = -1 }
         econ_money_reserves_change_raw_money = yes
         USA = {
-            set_temp_variable = { money_reserves_temp = $PRICE$ }
+            set_temp_variable = { money_reserves_temp = tnor_2rjw_purchase_price }
             econ_money_reserves_change_raw_money = yes
         }
     }
@@ -31,7 +31,7 @@ tnor_2rjw_add_oil_to_largest_fields = {
             limit = { check_variable = { tnor_2rjw_largest_oil_field > 0 } }
             event_target:tnor_2rjw_selected_oil_field = {
                 set_state_flag = tnor_2rjw_oil_field_selected
-                add_resource = { type = oil amount = $AMOUNT$ }
+                add_resource = { type = oil amount = tnor_2rjw_oil_increase }
             }
         }
     }
@@ -45,7 +45,26 @@ tnor_2rjw_develop_resource_deposit = {
     set_temp_variable = { tnor_2rjw_deposit_size = 0 }
     set_temp_variable = { tnor_2rjw_deposit_resource = 0 }
     every_owned_state = {
-        limit = { $REGION$ = yes }
+        limit = {
+            OR = {
+                AND = {
+                    check_variable = { tnor_2rjw_resource_region = 1 }
+                    tnor_2rjw_in_western_russia = yes
+                }
+                AND = {
+                    check_variable = { tnor_2rjw_resource_region = 2 }
+                    tnor_2rjw_in_western_siberia = yes
+                }
+                AND = {
+                    check_variable = { tnor_2rjw_resource_region = 3 }
+                    tnor_2rjw_in_siberia = yes
+                }
+                AND = {
+                    check_variable = { tnor_2rjw_resource_region = 4 }
+                    tnor_2rjw_in_far_east = yes
+                }
+            }
+        }
         if = {
             limit = { check_variable = { resource@oil > tnor_2rjw_deposit_size } }
             set_temp_variable = { tnor_2rjw_deposit_size = resource@oil }

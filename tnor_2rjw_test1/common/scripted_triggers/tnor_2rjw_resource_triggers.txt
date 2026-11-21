@@ -27,7 +27,7 @@ tnor_2rjw_has_resource_deposit = {
 
 tnor_2rjw_has_supply_hub = {
     any_province_building_level = {
-        type = supply_node
+        building = supply_node
         level > 0
         province = { all_provinces = yes }
     }

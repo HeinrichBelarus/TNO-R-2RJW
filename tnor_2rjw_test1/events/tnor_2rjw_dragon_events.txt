@@ -10,8 +10,7 @@ country_event = {
         name = tnor_2rjw_dragon.1.a
         ai_chance = { factor = 100 }
         set_country_flag = tnor_2rjw_dragon_talks
-        tnor_2rjw_send_dragon_proposal = { TARGET = XIN }
-        tnor_2rjw_send_dragon_proposal = { TARGET = QIN }
+        tnor_2rjw_send_dragon_proposals = yes
     }
     option = {
         name = tnor_2rjw_dragon.1.b
@@ -50,8 +49,7 @@ country_event = {
 
     option = {
         name = tnor_2rjw_dragon.3.a
-        tnor_2rjw_ratify_dragon_agreement = { TARGET = XIN }
-        tnor_2rjw_ratify_dragon_agreement = { TARGET = QIN }
+        tnor_2rjw_ratify_dragon_agreements = yes
         clr_country_flag = tnor_2rjw_dragon_talks
     }
 }

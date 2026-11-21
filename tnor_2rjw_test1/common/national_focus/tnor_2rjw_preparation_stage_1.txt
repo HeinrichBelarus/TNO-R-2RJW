@@ -49,7 +49,11 @@ focus_tree = {
         y = 3
         ai_will_do = { factor = 1 }
         completion_reward = {
-            tnor_2rjw_upgrade_spirit = { OLD = tnor_2rjw_railway_1 NEW = tnor_2rjw_railway_2 }
+            if = {
+                limit = { has_idea = tnor_2rjw_railway_1 }
+                swap_ideas = { remove_idea = tnor_2rjw_railway_1 add_idea = tnor_2rjw_railway_2 }
+            }
+            else = { add_ideas = tnor_2rjw_railway_2 }
         }
     }
 
@@ -78,7 +82,11 @@ focus_tree = {
         ai_will_do = { factor = 1 }
         completion_reward = {
             add_equipment_to_stockpile = { type = train_equipment_1 amount = 75 }
-            tnor_2rjw_upgrade_spirit = { OLD = tnor_2rjw_railway_2 NEW = tnor_2rjw_railway_3 }
+            if = {
+                limit = { has_idea = tnor_2rjw_railway_2 }
+                swap_ideas = { remove_idea = tnor_2rjw_railway_2 add_idea = tnor_2rjw_railway_3 }
+            }
+            else = { add_ideas = tnor_2rjw_railway_3 }
         }
     }
 
@@ -118,7 +126,8 @@ focus_tree = {
         ai_will_do = { factor = 1 }
         completion_reward = {
             tnor_2rjw_build_fuel_silos = yes
-            tnor_2rjw_add_oil_to_largest_fields = { AMOUNT = 8 }
+            set_temp_variable = { tnor_2rjw_oil_increase = 8 }
+            tnor_2rjw_add_oil_to_largest_fields = yes
         }
     }
 
@@ -132,7 +141,11 @@ focus_tree = {
         ai_will_do = { factor = 1 }
         completion_reward = {
             add_equipment_to_stockpile = { type = motorized_equipment_2 amount = 1500 }
-            tnor_2rjw_upgrade_spirit = { OLD = tnor_2rjw_logistics_1 NEW = tnor_2rjw_logistics_2 }
+            if = {
+                limit = { has_idea = tnor_2rjw_logistics_1 }
+                swap_ideas = { remove_idea = tnor_2rjw_logistics_1 add_idea = tnor_2rjw_logistics_2 }
+            }
+            else = { add_ideas = tnor_2rjw_logistics_2 }
         }
     }
 
@@ -177,7 +190,11 @@ focus_tree = {
         y = 5
         ai_will_do = { factor = 1 }
         completion_reward = {
-            tnor_2rjw_upgrade_spirit = { OLD = tnor_2rjw_logistics_2 NEW = tnor_2rjw_logistics_3 }
+            if = {
+                limit = { has_idea = tnor_2rjw_logistics_2 }
+                swap_ideas = { remove_idea = tnor_2rjw_logistics_2 add_idea = tnor_2rjw_logistics_3 }
+            }
+            else = { add_ideas = tnor_2rjw_logistics_3 }
         }
     }
 
@@ -190,7 +207,11 @@ focus_tree = {
         y = 6
         ai_will_do = { factor = 1 }
         completion_reward = {
-            tnor_2rjw_upgrade_spirit = { OLD = tnor_2rjw_logistics_3 NEW = tnor_2rjw_logistics_4 }
+            if = {
+                limit = { has_idea = tnor_2rjw_logistics_3 }
+                swap_ideas = { remove_idea = tnor_2rjw_logistics_3 add_idea = tnor_2rjw_logistics_4 }
+            }
+            else = { add_ideas = tnor_2rjw_logistics_4 }
         }
     }
 
@@ -399,7 +420,8 @@ focus_tree = {
         y = 4
         ai_will_do = { factor = 1 }
         completion_reward = {
-            tnor_2rjw_add_oil_to_largest_fields = { AMOUNT = 10 }
+            set_temp_variable = { tnor_2rjw_oil_increase = 10 }
+            tnor_2rjw_add_oil_to_largest_fields = yes
         }
     }
 
@@ -554,7 +576,18 @@ focus_tree = {
         ai_will_do = { factor = 1 }
         completion_reward = {
             add_manpower = 100000
-            tnor_2rjw_raise_rifle_divisions = { STATE = 570 PROVINCE = 7825 COUNT = 1 EXPERIENCE = 1 }
+            if = {
+                limit = { controls_state = 570 }
+                tnor_2rjw_ensure_rifle_template = yes
+                570 = {
+                    create_unit = {
+                        division = "division_template = \"Eastern Rifle Division\" start_experience_factor = 1 start_equipment_factor = 1"
+                        owner = ROOT
+                        prioritize_location = 7825
+                        count = 1
+                    }
+                }
+            }
             load_focus_tree = { tree = tnor_2rjw_eastern_preparation_stage_2 keep_completed = yes }
         }
     }

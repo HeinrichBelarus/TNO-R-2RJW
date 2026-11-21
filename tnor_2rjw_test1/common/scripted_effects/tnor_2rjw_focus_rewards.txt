@@ -1,11 +1,3 @@
-tnor_2rjw_upgrade_spirit = {
-    if = {
-        limit = { has_idea = $OLD$ }
-        swap_ideas = { remove_idea = $OLD$ add_idea = $NEW$ }
-    }
-    else = { add_ideas = $NEW$ }
-}
-
 tnor_2rjw_build_fuel_silos = {
     every_owned_state = {
         limit = {
@@ -64,7 +56,7 @@ tnor_2rjw_link_new_border_hub = {
                 OR = {
                     tnor_2rjw_has_supply_hub = yes
                     any_province_building_level = {
-                        type = naval_base
+                        building = naval_base
                         level > 0
                         province = { all_provinces = yes }
                     }
@@ -118,15 +110,10 @@ tnor_2rjw_increase_siberian_state_gdp = {
     }
 }
 
+# The Omsk tree uses the same border selector for the Moscow frontier.
 tnor_2rjw_fortify_german_border = {
-    tnor_2rjw_fortify_frontier = { NEIGHBOR = GER }
-    tnor_2rjw_fortify_frontier = { NEIGHBOR = MCW }
-}
-
-# The Omsk tree uses the same province selector for the Moscow frontier.
-tnor_2rjw_fortify_frontier = {
     every_owned_state = {
-        limit = { any_neighbor_state = { is_owned_by = $NEIGHBOR$ } }
+        limit = { any_neighbor_state = { is_owned_by = GER } }
         set_building_level = {
             type = bunker
             level = 2
@@ -134,7 +121,21 @@ tnor_2rjw_fortify_frontier = {
             province = {
                 all_provinces = yes
                 limit_to_border = yes
-                limit_to_border_country = $NEIGHBOR$
+                limit_to_border_country = GER
+                level < 2
+            }
+        }
+    }
+    every_owned_state = {
+        limit = { any_neighbor_state = { is_owned_by = MCW } }
+        set_building_level = {
+            type = bunker
+            level = 2
+            instant_build = yes
+            province = {
+                all_provinces = yes
+                limit_to_border = yes
+                limit_to_border_country = MCW
                 level < 2
             }
         }
@@ -210,5 +211,16 @@ tnor_2rjw_raise_marines = {
 
 tnor_2rjw_call_up_chita_reserves = {
     add_manpower = 25000
-    tnor_2rjw_raise_rifle_divisions = { STATE = 563 PROVINCE = 12641 COUNT = 2 EXPERIENCE = 0.80 }
+    if = {
+        limit = { controls_state = 563 }
+        tnor_2rjw_ensure_rifle_template = yes
+        563 = {
+            create_unit = {
+                division = "division_template = \"Eastern Rifle Division\" start_experience_factor = 0.80 start_equipment_factor = 1"
+                owner = ROOT
+                prioritize_location = 12641
+                count = 2
+            }
+        }
+    }
 }

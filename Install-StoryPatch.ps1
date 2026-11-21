@@ -119,6 +119,11 @@ foreach ($id in @('NOV_WCW_debug', 'NOV_MU_debug')) {
     $debug = Replace-One $debug $pattern ''
 }
 
+# TNO:R registers only selected battalion modifiers. Add the marine attack bonus.
+$unitModifiersPath = 'common/units/unit_modifiers/unit_modifiers.txt'
+$unitModifiers = Replace-One (Read-RequiemFile $unitModifiersPath) '(?m)^sub_unit_modifiers = \{\n' (
+    "sub_unit_modifiers = {`n`tmodifier_army_sub_unit_marine_attack_factor`n")
+
 # Resolve the two marked campaign targets as puppets before Requiem's generic annexation handler.
 $peacePath = 'common/on_actions/TNO_peace_on_actions.txt'
 $peace = Replace-One (Read-RequiemFile $peacePath) '(?m)^\ton_capitulation = \{\n\t\teffect = \{\n' (
@@ -137,6 +142,7 @@ $overrides = @{
     $sharedPath = $shared
     $treePath = $trees
     $debugPath = $debug
+    $unitModifiersPath = $unitModifiers
     $peacePath = $peace
 }
 foreach ($relativePath in $overrides.Keys) {
