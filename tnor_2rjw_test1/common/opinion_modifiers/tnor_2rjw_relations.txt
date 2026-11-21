@@ -1,0 +1,4 @@
+opinion_modifiers = {
+    tnor_2rjw_relations_25 = { value = 25 }
+    tnor_2rjw_relations_15 = { value = 15 }
+}

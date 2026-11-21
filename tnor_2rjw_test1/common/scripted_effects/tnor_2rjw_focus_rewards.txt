@@ -1,0 +1,214 @@
+tnor_2rjw_upgrade_spirit = {
+    if = {
+        limit = { has_idea = $OLD$ }
+        swap_ideas = { remove_idea = $OLD$ add_idea = $NEW$ }
+    }
+    else = { add_ideas = $NEW$ }
+}
+
+tnor_2rjw_build_fuel_silos = {
+    every_owned_state = {
+        limit = {
+            OR = {
+                state = 40  # Barnaul
+                state = 562 # Magadan
+                state = 563 # Chita
+                state = 567 # Bratsk
+                state = 568 # Kansk
+                state = 569 # Kemerovo
+                state = 570 # Novosibirsk
+                state = 757 # Krasnoyarsk
+            }
+        }
+        add_building_construction = { type = fuel_silo level = 1 instant_build = yes }
+    }
+}
+
+# Build a hub at a town where possible, then connect it to the closest existing
+# railhead or port. Do not duplicate a hub that the player has already built.
+tnor_2rjw_build_border_supply_hubs = {
+    every_owned_state = {
+        limit = {
+            is_controlled_by = ROOT
+            any_neighbor_state = { OR = { is_owned_by = MAN is_owned_by = MEN } }
+            NOT = { tnor_2rjw_has_supply_hub = yes }
+        }
+        add_building_construction = {
+            type = supply_node
+            level = 1
+            instant_build = yes
+            province = { all_provinces = yes limit_to_victory_point = yes first = yes }
+        }
+        if = {
+            limit = { NOT = { tnor_2rjw_has_supply_hub = yes } }
+            add_building_construction = {
+                type = supply_node
+                level = 1
+                instant_build = yes
+                province = { all_provinces = yes first = yes }
+            }
+        }
+        tnor_2rjw_link_new_border_hub = yes
+    }
+}
+
+tnor_2rjw_link_new_border_hub = {
+    save_event_target_as = tnor_2rjw_border_hub
+    set_temp_variable = { tnor_2rjw_nearest_railhead_distance = 100000 }
+    ROOT = {
+        every_owned_state = {
+            limit = {
+                NOT = { state = event_target:tnor_2rjw_border_hub }
+                NOT = { has_state_flag = tnor_2rjw_recent_border_hub }
+                is_controlled_by = ROOT
+                OR = {
+                    tnor_2rjw_has_supply_hub = yes
+                    any_province_building_level = {
+                        type = naval_base
+                        level > 0
+                        province = { all_provinces = yes }
+                    }
+                }
+            }
+            event_target:tnor_2rjw_border_hub = {
+                set_temp_variable = { tnor_2rjw_candidate_distance = distance_to@PREV }
+            }
+            if = {
+                limit = {
+                    check_variable = { tnor_2rjw_candidate_distance < tnor_2rjw_nearest_railhead_distance }
+                    ROOT = {
+                        can_build_railway = {
+                            start_state = PREV
+                            target_state = event_target:tnor_2rjw_border_hub
+                            build_only_on_allied = yes
+                        }
+                    }
+                }
+                set_temp_variable = { tnor_2rjw_nearest_railhead_distance = tnor_2rjw_candidate_distance }
+                save_event_target_as = tnor_2rjw_nearest_railhead
+            }
+        }
+        if = {
+            limit = { check_variable = { tnor_2rjw_nearest_railhead_distance < 100000 } }
+            build_railway = {
+                start_state = event_target:tnor_2rjw_nearest_railhead
+                target_state = event_target:tnor_2rjw_border_hub
+                level = 1
+                build_only_on_allied = yes
+            }
+        }
+    }
+    set_state_flag = { flag = tnor_2rjw_recent_border_hub days = 1 }
+}
+
+tnor_2rjw_increase_siberian_state_gdp = {
+    custom_effect_tooltip = tnor_2rjw_siberian_gdp_tt
+    hidden_effect = {
+        every_owned_state = {
+            limit = { OR = { state = 569 state = 570 state = 757 } }
+            multiply_variable = { state_value = 1.05 }
+        }
+        562 = {
+            if = {
+                limit = { is_owned_by = ROOT }
+                multiply_variable = { state_value = 1.10 }
+            }
+        }
+        recalculate_GDP_and_PUs_on_demand = yes
+    }
+}
+
+tnor_2rjw_fortify_german_border = {
+    tnor_2rjw_fortify_frontier = { NEIGHBOR = GER }
+    tnor_2rjw_fortify_frontier = { NEIGHBOR = MCW }
+}
+
+# The Omsk tree uses the same province selector for the Moscow frontier.
+tnor_2rjw_fortify_frontier = {
+    every_owned_state = {
+        limit = { any_neighbor_state = { is_owned_by = $NEIGHBOR$ } }
+        set_building_level = {
+            type = bunker
+            level = 2
+            instant_build = yes
+            province = {
+                all_provinces = yes
+                limit_to_border = yes
+                limit_to_border_country = $NEIGHBOR$
+                level < 2
+            }
+        }
+    }
+}
+
+tnor_2rjw_strengthen_chain_of_command = {
+    custom_effect_tooltip = tnor_2rjw_chain_of_command_tt
+    hidden_effect = {
+        if = {
+            limit = { NOT = { has_dynamic_modifier = { modifier = RUS_chain_of_command } } }
+            add_dynamic_modifier = { modifier = RUS_chain_of_command }
+        }
+        add_to_variable = { RUS_coc_attack = 0.05 }
+        force_update_dynamic_modifier = yes
+    }
+}
+
+tnor_2rjw_raise_border_guards = {
+    custom_effect_tooltip = tnor_2rjw_raise_border_guards_tt
+    if = {
+        limit = { 214 = { is_controlled_by = ROOT } }
+        if = {
+            limit = { NOT = { has_template = "Border Guard Brigade" } }
+            division_template = {
+                name = "Border Guard Brigade"
+                regiments = {
+                    light_infantry = { x = 0 y = 0 }
+                    light_infantry = { x = 0 y = 1 }
+                    light_infantry = { x = 0 y = 2 }
+                }
+            }
+        }
+        214 = {
+            create_unit = {
+                division = "division_template = \"Border Guard Brigade\" start_equipment_factor = 1"
+                owner = ROOT
+                prioritize_location = 3338
+                count = 32
+            }
+        }
+    }
+}
+
+tnor_2rjw_raise_marines = {
+    custom_effect_tooltip = tnor_2rjw_raise_marines_tt
+    if = {
+        limit = { 562 = { is_controlled_by = ROOT } }
+        if = {
+            limit = { NOT = { has_template = "Pacific Marine Division" } }
+            division_template = {
+                name = "Pacific Marine Division"
+                regiments = {
+                    marine = { x = 0 y = 0 }
+                    marine = { x = 0 y = 1 }
+                    marine = { x = 0 y = 2 }
+                    marine = { x = 1 y = 0 }
+                    marine = { x = 1 y = 1 }
+                    marine = { x = 1 y = 2 }
+                }
+            }
+        }
+        562 = {
+            create_unit = {
+                division = "division_template = \"Pacific Marine Division\" start_experience_factor = 0.80 start_equipment_factor = 1"
+                owner = ROOT
+                prioritize_location = 12683
+                count = 10
+            }
+        }
+    }
+}
+
+tnor_2rjw_call_up_chita_reserves = {
+    add_manpower = 25000
+    tnor_2rjw_raise_rifle_divisions = { STATE = 563 PROVINCE = 12641 COUNT = 2 EXPERIENCE = 0.80 }
+}

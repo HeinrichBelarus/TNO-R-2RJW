@@ -12,8 +12,12 @@ tnor_2rjw_pay_partisan_supply_kit = {
 }
 
 tnor_2rjw_raise_irkutsk_infantry = {
+    tnor_2rjw_raise_rifle_divisions = { STATE = 566 PROVINCE = 1727 COUNT = 2 EXPERIENCE = 1 }
+}
+
+tnor_2rjw_raise_rifle_divisions = {
     if = {
-        limit = { 566 = { is_controlled_by = ROOT } }
+        limit = { $STATE$ = { is_controlled_by = ROOT } }
         if = {
             limit = { NOT = { has_template = "Eastern Rifle Division" } }
             division_template = {
@@ -28,12 +32,12 @@ tnor_2rjw_raise_irkutsk_infantry = {
                 }
             }
         }
-        566 = {
+        $STATE$ = {
             create_unit = {
-                division = "division_template = \"Eastern Rifle Division\" start_experience_factor = 1 start_equipment_factor = 1"
+                division = "division_template = \"Eastern Rifle Division\" start_experience_factor = $EXPERIENCE$ start_equipment_factor = 1"
                 owner = ROOT
-                prioritize_location = 1727
-                count = 2
+                prioritize_location = $PROVINCE$
+                count = $COUNT$
             }
         }
     }
@@ -150,6 +154,23 @@ tnor_2rjw_declare_eastern_war = {
     }
     tnor_2rjw_admit_partisans = { TARGET = MPS }
     tnor_2rjw_admit_partisans = { TARGET = FPS }
+    if = {
+        limit = {
+            has_completed_focus = TNOR_2RJW_the_tiger_and_the_bear
+            country_exists = IND
+            country_exists = AZH
+        }
+        AZH = {
+            tnor_2rjw_detach_dragon_target = yes
+            econ_leave_sphere = yes
+        }
+        IND = {
+            if = {
+                limit = { NOT = { has_war_with = AZH } }
+                declare_war_on = { target = AZH type = annex_everything }
+            }
+        }
+    }
     tnor_2rjw_open_eastern_front = { ENEMY = JAP }
     tnor_2rjw_open_eastern_front = { ENEMY = MEN }
     tnor_2rjw_open_eastern_front = { ENEMY = MAN }

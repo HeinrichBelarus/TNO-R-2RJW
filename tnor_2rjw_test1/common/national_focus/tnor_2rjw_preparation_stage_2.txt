@@ -21,6 +21,9 @@ focus_tree = {
         x = 0
         y = 1
         ai_will_do = { factor = 1 }
+        completion_reward = {
+            tnor_2rjw_fortify_german_border = yes
+        }
     }
 
     focus = {
@@ -31,6 +34,9 @@ focus_tree = {
         x = 0
         y = 2
         ai_will_do = { factor = 1 }
+        completion_reward = {
+            tnor_2rjw_raise_border_guards = yes
+        }
     }
 
     focus = {
@@ -71,6 +77,9 @@ focus_tree = {
         x = 0
         y = 6
         ai_will_do = { factor = 1 }
+        completion_reward = {
+            add_ideas = tnor_2rjw_western_front
+        }
     }
 
     focus = {
@@ -81,6 +90,9 @@ focus_tree = {
         x = 8
         y = 1
         ai_will_do = { factor = 1 }
+        completion_reward = {
+            tnor_2rjw_strengthen_chain_of_command = yes
+        }
     }
 
     focus = {
@@ -91,6 +103,9 @@ focus_tree = {
         x = 4
         y = 2
         ai_will_do = { factor = 1 }
+        completion_reward = {
+            add_ideas = tnor_2rjw_amphibious_spearhead
+        }
     }
 
     focus = {
@@ -111,6 +126,9 @@ focus_tree = {
         x = 4
         y = 4
         ai_will_do = { factor = 1 }
+        completion_reward = {
+            tnor_2rjw_raise_marines = yes
+        }
     }
 
     focus = {
@@ -121,6 +139,9 @@ focus_tree = {
         x = 8
         y = 2
         ai_will_do = { factor = 1 }
+        completion_reward = {
+            add_ideas = tnor_2rjw_steel_fist_1
+        }
     }
 
     focus = {
@@ -131,6 +152,9 @@ focus_tree = {
         x = 8
         y = 3
         ai_will_do = { factor = 1 }
+        completion_reward = {
+            tnor_2rjw_upgrade_spirit = { OLD = tnor_2rjw_steel_fist_1 NEW = tnor_2rjw_steel_fist_2 }
+        }
     }
 
     focus = {
@@ -141,6 +165,9 @@ focus_tree = {
         x = 8
         y = 4
         ai_will_do = { factor = 1 }
+        completion_reward = {
+            tnor_2rjw_upgrade_spirit = { OLD = tnor_2rjw_steel_fist_2 NEW = tnor_2rjw_steel_fist_3 }
+        }
     }
 
     focus = {
@@ -151,6 +178,9 @@ focus_tree = {
         x = 12
         y = 2
         ai_will_do = { factor = 1 }
+        completion_reward = {
+            add_ideas = tnor_2rjw_backbone_1
+        }
     }
 
     focus = {
@@ -161,6 +191,9 @@ focus_tree = {
         x = 12
         y = 3
         ai_will_do = { factor = 1 }
+        completion_reward = {
+            tnor_2rjw_upgrade_spirit = { OLD = tnor_2rjw_backbone_1 NEW = tnor_2rjw_backbone_2 }
+        }
     }
 
     focus = {
@@ -171,6 +204,9 @@ focus_tree = {
         x = 12
         y = 4
         ai_will_do = { factor = 1 }
+        completion_reward = {
+            tnor_2rjw_upgrade_spirit = { OLD = tnor_2rjw_backbone_2 NEW = tnor_2rjw_backbone_3 }
+        }
     }
 
     focus = {
@@ -183,6 +219,11 @@ focus_tree = {
         x = 8
         y = 5
         ai_will_do = { factor = 1 }
+        completion_reward = {
+            add_ideas = tnor_2rjw_thousand_engines
+            add_equipment_to_stockpile = { type = jet_fighter_equipment_2 amount = 100 }
+            add_equipment_to_stockpile = { type = jet_CAS_equipment_2 amount = 100 }
+        }
     }
 
     focus = {
@@ -193,6 +234,11 @@ focus_tree = {
         x = 8
         y = 6
         ai_will_do = { factor = 1 }
+        completion_reward = {
+            add_ideas = tnor_2rjw_sky_shall_burn
+            add_equipment_to_stockpile = { type = anti_air_equipment_1 amount = 500 }
+            add_equipment_to_stockpile = { type = MBT_aa_equipment_1 amount = 100 }
+        }
     }
 
     focus = {
@@ -203,6 +249,10 @@ focus_tree = {
         x = 16
         y = 1
         ai_will_do = { factor = 1 }
+        completion_reward = {
+            add_command_power = 25
+            add_political_power = 50
+        }
     }
 
     focus = {
@@ -213,6 +263,10 @@ focus_tree = {
         x = 16
         y = 2
         ai_will_do = { factor = 1 }
+        completion_reward = {
+            add_command_power = 25
+            add_ideas = tnor_2rjw_blueprint_1
+        }
     }
 
     focus = {
@@ -223,6 +277,9 @@ focus_tree = {
         x = 16
         y = 3
         ai_will_do = { factor = 1 }
+        completion_reward = {
+            tnor_2rjw_upgrade_spirit = { OLD = tnor_2rjw_blueprint_1 NEW = tnor_2rjw_blueprint_2 }
+        }
     }
 
     focus = {
@@ -233,6 +290,9 @@ focus_tree = {
         x = 16
         y = 4
         ai_will_do = { factor = 1 }
+        completion_reward = {
+            tnor_2rjw_upgrade_spirit = { OLD = tnor_2rjw_blueprint_2 NEW = tnor_2rjw_blueprint_3 }
+        }
     }
 
     focus = {
@@ -243,6 +303,11 @@ focus_tree = {
         x = 16
         y = 5
         ai_will_do = { factor = 1 }
+        completion_reward = {
+            add_political_power = 100
+            add_command_power = 100
+            add_war_support = 0.05
+        }
     }
 
     focus = {
@@ -315,7 +380,10 @@ focus_tree = {
         ai_will_do = { factor = 1 }
         mutually_exclusive = { focus = TNOR_2RJW_operation_broken_dragon }
         available = { tnor_2rjw_dragon_agreement_ready = yes }
-        completion_reward = { country_event = { id = tnor_2rjw_dragon.3 } }
+        completion_reward = {
+            custom_effect_tooltip = tnor_2rjw_seize_dragon_unlock_tt
+            country_event = { id = tnor_2rjw_dragon.3 }
+        }
     }
 
     focus = {

@@ -22,6 +22,9 @@ focus_tree = {
         x = 14
         y = 1
         ai_will_do = { factor = 1 }
+        completion_reward = {
+            add_war_support = 0.10
+        }
     }
 
     focus = {
@@ -32,6 +35,9 @@ focus_tree = {
         x = 0
         y = 2
         ai_will_do = { factor = 1 }
+        completion_reward = {
+            add_ideas = tnor_2rjw_railway_1
+        }
     }
 
     focus = {
@@ -42,6 +48,9 @@ focus_tree = {
         x = 0
         y = 3
         ai_will_do = { factor = 1 }
+        completion_reward = {
+            tnor_2rjw_upgrade_spirit = { OLD = tnor_2rjw_railway_1 NEW = tnor_2rjw_railway_2 }
+        }
     }
 
     focus = {
@@ -52,6 +61,11 @@ focus_tree = {
         x = 0
         y = 4
         ai_will_do = { factor = 1 }
+        completion_reward = {
+            add_war_support = 0.05
+            add_stability = 0.05
+            tnor_2rjw_expand_eastern_railways = yes
+        }
     }
 
     focus = {
@@ -62,6 +76,10 @@ focus_tree = {
         x = 0
         y = 5
         ai_will_do = { factor = 1 }
+        completion_reward = {
+            add_equipment_to_stockpile = { type = train_equipment_1 amount = 75 }
+            tnor_2rjw_upgrade_spirit = { OLD = tnor_2rjw_railway_2 NEW = tnor_2rjw_railway_3 }
+        }
     }
 
     focus = {
@@ -72,6 +90,9 @@ focus_tree = {
         x = 0
         y = 6
         ai_will_do = { factor = 1 }
+        completion_reward = {
+            tnor_2rjw_upgrade_trans_siberian = yes
+        }
     }
 
     focus = {
@@ -82,6 +103,9 @@ focus_tree = {
         x = 5
         y = 2
         ai_will_do = { factor = 1 }
+        completion_reward = {
+            add_ideas = tnor_2rjw_logistics_1
+        }
     }
 
     focus = {
@@ -92,6 +116,10 @@ focus_tree = {
         x = 3
         y = 3
         ai_will_do = { factor = 1 }
+        completion_reward = {
+            tnor_2rjw_build_fuel_silos = yes
+            tnor_2rjw_add_oil_to_largest_fields = { AMOUNT = 8 }
+        }
     }
 
     focus = {
@@ -102,6 +130,10 @@ focus_tree = {
         x = 3
         y = 4
         ai_will_do = { factor = 1 }
+        completion_reward = {
+            add_equipment_to_stockpile = { type = motorized_equipment_2 amount = 1500 }
+            tnor_2rjw_upgrade_spirit = { OLD = tnor_2rjw_logistics_1 NEW = tnor_2rjw_logistics_2 }
+        }
     }
 
     focus = {
@@ -112,6 +144,9 @@ focus_tree = {
         x = 7
         y = 3
         ai_will_do = { factor = 1 }
+        completion_reward = {
+            tnor_2rjw_build_border_supply_hubs = yes
+        }
     }
 
     focus = {
@@ -122,6 +157,14 @@ focus_tree = {
         x = 7
         y = 4
         ai_will_do = { factor = 1 }
+        completion_reward = {
+            add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 25000 }
+            add_equipment_to_stockpile = { type = support_equipment_1 amount = 2500 }
+            add_equipment_to_stockpile = { type = motorized_equipment_1 amount = 1000 }
+            add_equipment_to_stockpile = { type = anti_tank_equipment_1 amount = 1000 }
+            add_equipment_to_stockpile = { type = artillery_equipment_1 amount = 750 }
+            add_equipment_to_stockpile = { type = anti_air_equipment_1 amount = 750 }
+        }
     }
 
     focus = {
@@ -133,6 +176,9 @@ focus_tree = {
         x = 5
         y = 5
         ai_will_do = { factor = 1 }
+        completion_reward = {
+            tnor_2rjw_upgrade_spirit = { OLD = tnor_2rjw_logistics_2 NEW = tnor_2rjw_logistics_3 }
+        }
     }
 
     focus = {
@@ -143,6 +189,9 @@ focus_tree = {
         x = 5
         y = 6
         ai_will_do = { factor = 1 }
+        completion_reward = {
+            tnor_2rjw_upgrade_spirit = { OLD = tnor_2rjw_logistics_3 NEW = tnor_2rjw_logistics_4 }
+        }
     }
 
     focus = {
@@ -205,6 +254,13 @@ focus_tree = {
         x = 17
         y = 2
         ai_will_do = { factor = 1 }
+        completion_reward = {
+            USA = { add_opinion_modifier = { target = ROOT modifier = tnor_2rjw_relations_25 } }
+            AST = { add_opinion_modifier = { target = ROOT modifier = tnor_2rjw_relations_25 } }
+            NZL = { add_opinion_modifier = { target = ROOT modifier = tnor_2rjw_relations_25 } }
+            IND = { add_opinion_modifier = { target = ROOT modifier = tnor_2rjw_relations_25 } }
+            CAN = { add_opinion_modifier = { target = ROOT modifier = tnor_2rjw_relations_25 } }
+        }
     }
 
     focus = {
@@ -225,6 +281,9 @@ focus_tree = {
         x = 19
         y = 3
         ai_will_do = { factor = 1 }
+        completion_reward = {
+            add_ideas = tnor_2rjw_american_red_cross
+        }
     }
 
     focus = {
@@ -235,6 +294,9 @@ focus_tree = {
         x = 16
         y = 4
         ai_will_do = { factor = 1 }
+        completion_reward = {
+            add_political_power = 25
+        }
     }
 
     focus = {
@@ -255,6 +317,9 @@ focus_tree = {
         x = 16
         y = 5
         ai_will_do = { factor = 1 }
+        completion_reward = {
+            custom_effect_tooltip = tnor_2rjw_arsenal_unlock_tt
+        }
     }
 
     focus = {
@@ -265,6 +330,10 @@ focus_tree = {
         x = 19
         y = 5
         ai_will_do = { factor = 1 }
+        completion_reward = {
+            IND = { add_opinion_modifier = { target = ROOT modifier = tnor_2rjw_relations_15 } }
+            custom_effect_tooltip = tnor_2rjw_indian_front_tt
+        }
     }
 
     focus = {
@@ -275,6 +344,10 @@ focus_tree = {
         x = 16
         y = 6
         ai_will_do = { factor = 1 }
+        completion_reward = {
+            add_equipment_to_stockpile = { type = infantry_equipment_2 amount = 5000 producer = AST }
+            add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 2500 producer = NZL }
+        }
     }
 
     focus = {
@@ -286,6 +359,9 @@ focus_tree = {
         x = 17
         y = 7
         ai_will_do = { factor = 1 }
+        completion_reward = {
+            add_war_support = 0.05
+        }
     }
 
     focus = {
@@ -296,6 +372,9 @@ focus_tree = {
         x = 26
         y = 2
         ai_will_do = { factor = 1 }
+        completion_reward = {
+            add_ideas = tnor_2rjw_industrial_might
+        }
     }
 
     focus = {
@@ -306,6 +385,9 @@ focus_tree = {
         x = 22
         y = 3
         ai_will_do = { factor = 1 }
+        completion_reward = {
+            custom_effect_tooltip = tnor_2rjw_resources_unlock_tt
+        }
     }
 
     focus = {
@@ -316,6 +398,9 @@ focus_tree = {
         x = 22
         y = 4
         ai_will_do = { factor = 1 }
+        completion_reward = {
+            tnor_2rjw_add_oil_to_largest_fields = { AMOUNT = 10 }
+        }
     }
 
     focus = {
@@ -326,6 +411,11 @@ focus_tree = {
         x = 22
         y = 5
         ai_will_do = { factor = 1 }
+        completion_reward = {
+            add_ideas = tnor_2rjw_every_ton_counts
+            set_temp_variable = { money_reserves_temp = 2 }
+            econ_money_reserves_change_raw_money = yes
+        }
     }
 
     focus = {
@@ -336,6 +426,9 @@ focus_tree = {
         x = 22
         y = 6
         ai_will_do = { factor = 1 }
+        completion_reward = {
+            tnor_2rjw_increase_siberian_state_gdp = yes
+        }
     }
 
     focus = {
@@ -346,6 +439,9 @@ focus_tree = {
         x = 26
         y = 3
         ai_will_do = { factor = 1 }
+        completion_reward = {
+            add_ideas = tnor_2rjw_assembly_lines
+        }
     }
 
     focus = {
@@ -356,6 +452,11 @@ focus_tree = {
         x = 26
         y = 4
         ai_will_do = { factor = 1 }
+        completion_reward = {
+            add_ideas = tnor_2rjw_brighter_furnaces
+            569 = { if = { limit = { is_owned_by = ROOT } add_resource = { type = steel amount = 20 } } }
+            757 = { if = { limit = { is_owned_by = ROOT } add_resource = { type = steel amount = 20 } } }
+        }
     }
 
     focus = {
@@ -366,6 +467,9 @@ focus_tree = {
         x = 26
         y = 5
         ai_will_do = { factor = 1 }
+        completion_reward = {
+            add_ideas = tnor_2rjw_built_to_last
+        }
     }
 
     focus = {
@@ -376,6 +480,9 @@ focus_tree = {
         x = 26
         y = 6
         ai_will_do = { factor = 1 }
+        completion_reward = {
+            add_ideas = tnor_2rjw_thousand_hammers
+        }
     }
 
     focus = {
@@ -386,6 +493,9 @@ focus_tree = {
         x = 30
         y = 3
         ai_will_do = { factor = 1 }
+        completion_reward = {
+            add_war_support = -0.10
+        }
     }
 
     focus = {
@@ -396,6 +506,9 @@ focus_tree = {
         x = 30
         y = 4
         ai_will_do = { factor = 1 }
+        completion_reward = {
+            add_war_support = 0.15
+        }
     }
 
     focus = {
@@ -406,6 +519,9 @@ focus_tree = {
         x = 30
         y = 5
         ai_will_do = { factor = 1 }
+        completion_reward = {
+            add_ideas = tno_conscription_service_by_requirement
+        }
     }
 
     focus = {
@@ -416,6 +532,10 @@ focus_tree = {
         x = 30
         y = 6
         ai_will_do = { factor = 1 }
+        completion_reward = {
+            add_ideas = tnor_2rjw_free_tomorrow
+            add_manpower = 50000
+        }
     }
 
     focus = {
@@ -432,6 +552,10 @@ focus_tree = {
         x = 14
         y = 8
         ai_will_do = { factor = 1 }
-        completion_reward = { load_focus_tree = { tree = tnor_2rjw_eastern_preparation_stage_2 keep_completed = yes } }
+        completion_reward = {
+            add_manpower = 100000
+            tnor_2rjw_raise_rifle_divisions = { STATE = 570 PROVINCE = 7825 COUNT = 1 EXPERIENCE = 1 }
+            load_focus_tree = { tree = tnor_2rjw_eastern_preparation_stage_2 keep_completed = yes }
+        }
     }
 }

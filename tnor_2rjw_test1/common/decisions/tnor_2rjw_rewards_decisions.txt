@@ -1,0 +1,255 @@
+tnor_2rjw_arsenal = {
+    tnor_2rjw_buy_rifles = {
+        icon = GFX_decision_generic_money_sign
+        cost = 10
+        days_re_enable = 14
+        available = { country_exists = USA }
+        custom_cost_trigger = {
+            command_power > 4.99
+            check_variable = { var = money_reserves value = 0.025 compare = greater_than_or_equals }
+        }
+        custom_cost_text = tnor_2rjw_arsenal_cost_25
+        ai_will_do = { factor = 0 }
+        complete_effect = {
+            tnor_2rjw_pay_american_suppliers = { PRICE = 0.025 }
+            add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 800 producer = USA }
+        }
+    }
+
+    tnor_2rjw_buy_support = {
+        icon = GFX_decision_generic_money_sign
+        cost = 10
+        days_re_enable = 14
+        available = { country_exists = USA }
+        custom_cost_trigger = {
+            command_power > 4.99
+            check_variable = { var = money_reserves value = 0.050 compare = greater_than_or_equals }
+        }
+        custom_cost_text = tnor_2rjw_arsenal_cost_50
+        ai_will_do = { factor = 0 }
+        complete_effect = {
+            tnor_2rjw_pay_american_suppliers = { PRICE = 0.050 }
+            add_equipment_to_stockpile = { type = support_equipment_1 amount = 250 producer = USA }
+        }
+    }
+
+    tnor_2rjw_buy_artillery = {
+        icon = GFX_decision_generic_money_sign
+        cost = 10
+        days_re_enable = 14
+        available = { country_exists = USA }
+        custom_cost_trigger = {
+            command_power > 4.99
+            check_variable = { var = money_reserves value = 0.075 compare = greater_than_or_equals }
+        }
+        custom_cost_text = tnor_2rjw_arsenal_cost_75
+        ai_will_do = { factor = 0 }
+        complete_effect = {
+            tnor_2rjw_pay_american_suppliers = { PRICE = 0.075 }
+            add_equipment_to_stockpile = { type = artillery_equipment_1 amount = 100 producer = USA }
+        }
+    }
+
+    tnor_2rjw_buy_trucks = {
+        icon = GFX_decision_generic_money_sign
+        cost = 10
+        days_re_enable = 14
+        available = { country_exists = USA }
+        custom_cost_trigger = {
+            command_power > 4.99
+            check_variable = { var = money_reserves value = 0.100 compare = greater_than_or_equals }
+        }
+        custom_cost_text = tnor_2rjw_arsenal_cost_100
+        ai_will_do = { factor = 0 }
+        complete_effect = {
+            tnor_2rjw_pay_american_suppliers = { PRICE = 0.100 }
+            add_equipment_to_stockpile = { type = motorized_equipment_1 amount = 300 producer = USA }
+        }
+    }
+
+    tnor_2rjw_buy_rpg = {
+        icon = GFX_decision_generic_money_sign
+        cost = 10
+        days_re_enable = 14
+        available = { country_exists = USA }
+        custom_cost_trigger = {
+            command_power > 4.99
+            check_variable = { var = money_reserves value = 0.025 compare = greater_than_or_equals }
+        }
+        custom_cost_text = tnor_2rjw_arsenal_cost_25
+        ai_will_do = { factor = 0 }
+        complete_effect = {
+            tnor_2rjw_pay_american_suppliers = { PRICE = 0.025 }
+            add_equipment_to_stockpile = { type = anti_tank_equipment_1 amount = 250 producer = USA }
+        }
+    }
+
+    tnor_2rjw_buy_tanks = {
+        icon = GFX_decision_generic_money_sign
+        cost = 10
+        days_re_enable = 28
+        available = { country_exists = USA }
+        custom_cost_trigger = {
+            command_power > 4.99
+            check_variable = { var = money_reserves value = 0.125 compare = greater_than_or_equals }
+        }
+        custom_cost_text = tnor_2rjw_arsenal_cost_125
+        ai_will_do = { factor = 0 }
+        complete_effect = {
+            tnor_2rjw_pay_american_suppliers = { PRICE = 0.125 }
+            add_equipment_to_stockpile = { type = MBT_equipment_1 amount = 50 producer = USA }
+        }
+    }
+
+    tnor_2rjw_buy_ifv = {
+        icon = GFX_decision_generic_money_sign
+        cost = 10
+        days_re_enable = 28
+        available = { country_exists = USA }
+        custom_cost_trigger = {
+            command_power > 4.99
+            check_variable = { var = money_reserves value = 0.125 compare = greater_than_or_equals }
+        }
+        custom_cost_text = tnor_2rjw_arsenal_cost_125
+        ai_will_do = { factor = 0 }
+        complete_effect = {
+            tnor_2rjw_pay_american_suppliers = { PRICE = 0.125 }
+            add_equipment_to_stockpile = { type = IFV_equipment_1 amount = 100 producer = USA }
+        }
+    }
+
+    tnor_2rjw_buy_fighters = {
+        icon = GFX_decision_generic_money_sign
+        cost = 10
+        days_re_enable = 28
+        available = { country_exists = USA }
+        custom_cost_trigger = {
+            command_power > 4.99
+            check_variable = { var = money_reserves value = 0.200 compare = greater_than_or_equals }
+        }
+        custom_cost_text = tnor_2rjw_arsenal_cost_200
+        ai_will_do = { factor = 0 }
+        complete_effect = {
+            tnor_2rjw_pay_american_suppliers = { PRICE = 0.200 }
+            add_equipment_to_stockpile = { type = jet_fighter_equipment_2 amount = 20 producer = USA }
+        }
+    }
+
+    tnor_2rjw_buy_attack_aircraft = {
+        icon = GFX_decision_generic_money_sign
+        cost = 10
+        days_re_enable = 28
+        available = { country_exists = USA }
+        custom_cost_trigger = {
+            command_power > 4.99
+            check_variable = { var = money_reserves value = 0.200 compare = greater_than_or_equals }
+        }
+        custom_cost_text = tnor_2rjw_arsenal_cost_200
+        ai_will_do = { factor = 0 }
+        complete_effect = {
+            tnor_2rjw_pay_american_suppliers = { PRICE = 0.200 }
+            add_equipment_to_stockpile = { type = jet_CAS_equipment_2 amount = 20 producer = USA }
+        }
+    }
+
+    tnor_2rjw_buy_convoys = {
+        icon = GFX_decision_generic_money_sign
+        cost = 10
+        days_re_enable = 28
+        available = { country_exists = USA }
+        custom_cost_trigger = {
+            command_power > 4.99
+            check_variable = { var = money_reserves value = 0.200 compare = greater_than_or_equals }
+        }
+        custom_cost_text = tnor_2rjw_arsenal_cost_200
+        ai_will_do = { factor = 0 }
+        complete_effect = {
+            tnor_2rjw_pay_american_suppliers = { PRICE = 0.200 }
+            add_equipment_to_stockpile = { type = convoy_1 amount = 50 producer = USA }
+        }
+    }
+
+    tnor_2rjw_invite_american_instructors = {
+        icon = GFX_decision_generic_shake_hands
+        cost = 10
+        fire_only_once = yes
+        available = { country_exists = USA }
+        custom_cost_trigger = { command_power > 4.99 }
+        custom_cost_text = tnor_2rjw_instructor_cost
+        ai_will_do = { factor = 0 }
+        complete_effect = {
+            add_command_power = -5
+            add_ideas = tnor_2rjw_american_instructors
+        }
+    }
+}
+
+tnor_2rjw_resource_development = {
+    tnor_2rjw_exploit_western_russia = {
+        icon = GFX_decision_generic_money_sign
+        fire_only_once = yes
+        available = {
+            any_owned_state = {
+                tnor_2rjw_in_western_russia = yes
+                tnor_2rjw_has_resource_deposit = yes
+            }
+        }
+        ai_will_do = { factor = 0 }
+        complete_effect = { tnor_2rjw_develop_resource_deposit = { REGION = tnor_2rjw_in_western_russia } }
+    }
+
+    tnor_2rjw_exploit_western_siberia = {
+        icon = GFX_decision_generic_money_sign
+        fire_only_once = yes
+        available = {
+            any_owned_state = {
+                tnor_2rjw_in_western_siberia = yes
+                tnor_2rjw_has_resource_deposit = yes
+            }
+        }
+        ai_will_do = { factor = 0 }
+        complete_effect = { tnor_2rjw_develop_resource_deposit = { REGION = tnor_2rjw_in_western_siberia } }
+    }
+
+    tnor_2rjw_exploit_siberia = {
+        icon = GFX_decision_generic_money_sign
+        fire_only_once = yes
+        available = {
+            any_owned_state = {
+                tnor_2rjw_in_siberia = yes
+                tnor_2rjw_has_resource_deposit = yes
+            }
+        }
+        ai_will_do = { factor = 0 }
+        complete_effect = { tnor_2rjw_develop_resource_deposit = { REGION = tnor_2rjw_in_siberia } }
+    }
+
+    tnor_2rjw_exploit_far_east = {
+        icon = GFX_decision_generic_money_sign
+        fire_only_once = yes
+        available = {
+            any_owned_state = {
+                tnor_2rjw_in_far_east = yes
+                tnor_2rjw_has_resource_deposit = yes
+            }
+        }
+        ai_will_do = { factor = 0 }
+        complete_effect = { tnor_2rjw_develop_resource_deposit = { REGION = tnor_2rjw_in_far_east } }
+    }
+}
+
+tnor_2rjw_broken_dragon = {
+    tnor_2rjw_seize_dragon = {
+        icon = GFX_decision_generic_shake_hands
+        visible = { has_completed_focus = TNOR_2RJW_a_common_enemy_a_common_cause }
+        available = {
+            custom_trigger_tooltip = {
+                tooltip = tnor_2rjw_seize_dragon_pending_tt
+                always = no
+            }
+        }
+        fire_only_once = yes
+        ai_will_do = { factor = 0 }
+        complete_effect = {}
+    }
+}
