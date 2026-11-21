@@ -1,0 +1,13 @@
+tnor_2rjw_open_indian_front = {
+    set_country_flag = tnor_2rjw_indian_front_opened
+    AZH = {
+        tnor_2rjw_detach_dragon_target = yes
+        econ_leave_sphere = yes
+    }
+    IND = {
+        if = {
+            limit = { NOT = { has_war_with = AZH } }
+            declare_war_on = { target = AZH type = annex_everything }
+        }
+    }
+}

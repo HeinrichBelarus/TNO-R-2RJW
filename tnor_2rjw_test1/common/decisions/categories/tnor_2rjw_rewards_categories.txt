@@ -7,11 +7,16 @@ tnor_2rjw_arsenal = {
 tnor_2rjw_resource_development = {
     icon = GFX_decision_category_generic
     allowed = { original_tag = NOV }
-    visible = { has_completed_focus = TNOR_2RJW_the_riches_beneath_our_feet }
+    visible = {
+        OR = {
+            has_completed_focus = TNOR_2RJW_the_riches_beneath_our_feet
+            has_completed_focus = TNOR_2RJW_fuel_for_the_coming_storm
+        }
+    }
 }
 
 tnor_2rjw_broken_dragon = {
     icon = GFX_decision_category_generic
     allowed = { original_tag = NOV }
-    visible = { has_completed_focus = TNOR_2RJW_a_common_enemy_a_common_cause }
+    visible = { tnor_2rjw_dragon_route_chosen = yes }
 }

@@ -1,5 +1,6 @@
 tnor_2rjw_partisan_supply_category = {
     tnor_2rjw_supply_mongolia = {
+        days_re_enable = 40
         icon = GFX_decision_generic_assault
         cost = 0
         visible = { NOT = { has_country_flag = tnor_2rjw_partisan_supply_closed } }
@@ -12,6 +13,7 @@ tnor_2rjw_partisan_supply_category = {
     }
 
     tnor_2rjw_supply_primorye = {
+        days_re_enable = 40
         icon = GFX_decision_generic_assault
         cost = 0
         visible = { NOT = { has_country_flag = tnor_2rjw_partisan_supply_closed } }

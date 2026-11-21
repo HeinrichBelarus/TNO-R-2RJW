@@ -1,47 +1,60 @@
-# Evaluate in the Russian campaign country's scope.
+tnor_2rjw_dragon_route_chosen = {
+    OR = {
+        has_completed_focus = TNOR_2RJW_operation_broken_dragon
+        has_completed_focus = TNOR_2RJW_a_common_enemy_a_common_cause
+    }
+}
+
 tnor_2rjw_central_asia_settled = {
-    OR = {
-        NOT = { country_exists = XIN }
-        XIN = { is_subject_of = ROOT }
-    }
-    OR = {
-        NOT = { country_exists = QIN }
-        QIN = { is_subject_of = ROOT }
-    }
+    has_country_flag = tnor_2rjw_dragon_settled
+    XIN = { is_subject_of = ROOT }
+    QIN = { is_subject_of = ROOT }
+}
+
+tnor_2rjw_dragon_replies_received = {
+    OR = { NOT = { country_exists = XIN } XIN = { has_country_flag = tnor_2rjw_dragon_replied } }
+    OR = { NOT = { country_exists = QIN } QIN = { has_country_flag = tnor_2rjw_dragon_replied } }
 }
 
 tnor_2rjw_dragon_agreement_ready = {
     has_country_flag = tnor_2rjw_dragon_talks
+    XIN = { exists = yes has_country_flag = tnor_2rjw_dragon_accepted }
+    QIN = { exists = yes has_country_flag = tnor_2rjw_dragon_accepted }
+}
+
+tnor_2rjw_dragon_operation_ready = {
     OR = {
-        NOT = { country_exists = XIN }
-        XIN = {
-            OR = {
-                is_subject_of = ROOT
-                has_country_flag = tnor_2rjw_dragon_accepted
-            }
-        }
-    }
-    OR = {
-        NOT = { country_exists = QIN }
-        QIN = {
-            OR = {
-                is_subject_of = ROOT
-                has_country_flag = tnor_2rjw_dragon_accepted
-            }
+        has_country_flag = tnor_2rjw_dragon_force
+        AND = {
+            has_country_flag = tnor_2rjw_dragon_talks
+            tnor_2rjw_dragon_replies_received = yes
+            NOT = { tnor_2rjw_dragon_agreement_ready = yes }
         }
     }
 }
 
-# Evaluate from the capitulation on-action: ROOT lost, FROM won.
-tnor_2rjw_dragon_capitulation = {
-    ROOT = {
-        has_country_flag = tnor_2rjw_dragon_war_target
-        has_war_with = event_target:tnor_2rjw_campaign_russia
-    }
-    FROM = {
-        OR = {
-            tag = event_target:tnor_2rjw_campaign_russia
-            is_in_faction_with = event_target:tnor_2rjw_campaign_russia
+tnor_2rjw_dragon_controls_campaign_states = {
+    controls_state = 618
+    controls_state = 617
+    controls_state = 957
+    controls_state = 958
+    controls_state = 619
+    controls_state = 1964
+    controls_state = 764
+    controls_state = 604
+    controls_state = 906
+}
+
+tnor_2rjw_dragon_settlement_ready = {
+    OR = {
+        AND = {
+            has_completed_focus = TNOR_2RJW_a_common_enemy_a_common_cause
+            country_exists = XIN
+            country_exists = QIN
+        }
+        AND = {
+            has_completed_focus = TNOR_2RJW_operation_broken_dragon
+            tnor_2rjw_dragon_controls_campaign_states = yes
         }
     }
 }

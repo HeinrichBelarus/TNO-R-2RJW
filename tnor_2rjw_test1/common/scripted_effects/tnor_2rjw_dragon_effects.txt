@@ -24,7 +24,6 @@ tnor_2rjw_send_dragon_proposals = {
         limit = {
             exists = yes
             OR = { tag = XIN tag = QIN }
-            NOT = { is_subject_of = ROOT }
         }
         country_event = { id = tnor_2rjw_dragon.2 }
     }
@@ -38,34 +37,46 @@ tnor_2rjw_launch_broken_dragon = {
             NOT = { is_subject_of = ROOT }
         }
         tnor_2rjw_detach_dragon_target = yes
-        set_country_flag = tnor_2rjw_dragon_war_target
         ROOT = {
             if = {
                 limit = { NOT = { has_war_with = PREV } }
-                declare_war_on = { target = PREV type = puppet_wargoal_focus }
+                declare_war_on = { target = PREV type = annex_everything }
             }
         }
         country_event = { id = tnor_2rjw_dragon.6 }
     }
 }
 
-tnor_2rjw_ratify_dragon_agreements = {
-    every_country = {
-        limit = {
-            exists = yes
-            OR = { tag = XIN tag = QIN }
-            has_country_flag = tnor_2rjw_dragon_accepted
-            NOT = { is_subject_of = ROOT }
+tnor_2rjw_settle_broken_dragon = {
+    if = {
+        limit = { has_completed_focus = TNOR_2RJW_operation_broken_dragon }
+        XIN = {
+            transfer_state = 618
+            transfer_state = 617
+            transfer_state = 957
+            transfer_state = 958
+            transfer_state = 619
+            transfer_state = 1964
         }
-        clr_country_flag = tnor_2rjw_dragon_accepted
-        tnor_2rjw_make_dragon_subject = yes
+        QIN = {
+            transfer_state = 764
+            transfer_state = 604
+            transfer_state = 906
+        }
     }
-}
-
-tnor_2rjw_handle_dragon_capitulation = {
-    ROOT = {
-        clr_country_flag = tnor_2rjw_dragon_war_target
-        tnor_2rjw_make_dragon_subject = yes
+    save_global_event_target_as = tnor_2rjw_campaign_russia
+    XIN = {
+        if = {
+            limit = { NOT = { is_subject_of = ROOT } }
+            tnor_2rjw_make_dragon_subject = yes
+        }
     }
-    event_target:tnor_2rjw_campaign_russia = { country_event = { id = tnor_2rjw_dragon.4 } }
+    QIN = {
+        if = {
+            limit = { NOT = { is_subject_of = ROOT } }
+            tnor_2rjw_make_dragon_subject = yes
+        }
+    }
+    set_country_flag = tnor_2rjw_dragon_settled
+    country_event = { id = tnor_2rjw_dragon.4 }
 }

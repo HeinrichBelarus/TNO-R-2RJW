@@ -19,28 +19,42 @@ tnor_2rjw_build_fuel_silos = {
 # Build a hub at a town where possible, then connect it to the closest existing
 # railhead or port. Do not duplicate a hub that the player has already built.
 tnor_2rjw_build_border_supply_hubs = {
-    every_owned_state = {
-        limit = {
-            is_controlled_by = ROOT
-            any_neighbor_state = { OR = { is_owned_by = MAN is_owned_by = MEN } }
-            NOT = { tnor_2rjw_has_supply_hub = yes }
-        }
-        add_building_construction = {
-            type = supply_node
-            level = 1
-            instant_build = yes
-            province = { all_provinces = yes limit_to_victory_point = yes first = yes }
-        }
+    custom_effect_tooltip = tnor_2rjw_border_supply_hubs_tt
+    hidden_effect = {
         if = {
-            limit = { NOT = { tnor_2rjw_has_supply_hub = yes } }
-            add_building_construction = {
-                type = supply_node
-                level = 1
-                instant_build = yes
-                province = { all_provinces = yes first = yes }
+            limit = { OR = { country_exists = MAN country_exists = MEN } }
+            every_owned_state = {
+                limit = {
+                    is_controlled_by = ROOT
+                    any_neighbor_state = {
+                        owner = {
+                            OR = { tag = MAN tag = MEN }
+                            exists = yes
+                        }
+                    }
+                    NOT = { tnor_2rjw_has_supply_hub = yes }
+                }
+                add_building_construction = {
+                    type = supply_node
+                    level = 1
+                    instant_build = yes
+                    province = { all_provinces = yes limit_to_victory_point = yes first = yes }
+                }
+                if = {
+                    limit = { NOT = { tnor_2rjw_has_supply_hub = yes } }
+                    add_building_construction = {
+                        type = supply_node
+                        level = 1
+                        instant_build = yes
+                        province = { all_provinces = yes first = yes }
+                    }
+                }
+                if = {
+                    limit = { tnor_2rjw_has_supply_hub = yes }
+                    tnor_2rjw_link_new_border_hub = yes
+                }
             }
         }
-        tnor_2rjw_link_new_border_hub = yes
     }
 }
 
@@ -94,19 +108,33 @@ tnor_2rjw_link_new_border_hub = {
 }
 
 tnor_2rjw_increase_siberian_state_gdp = {
-    custom_effect_tooltip = tnor_2rjw_siberian_gdp_tt
-    hidden_effect = {
-        every_owned_state = {
-            limit = { OR = { state = 569 state = 570 state = 757 } }
-            multiply_variable = { state_value = 1.05 }
+    569 = {
+        if = {
+            limit = { is_owned_by = ROOT }
+            set_temp_variable = { state_value_multiplier_temp = 1.05 }
+            econ_state_value_change_multiply_specified_state = yes
         }
-        562 = {
-            if = {
-                limit = { is_owned_by = ROOT }
-                multiply_variable = { state_value = 1.10 }
-            }
+    }
+    570 = {
+        if = {
+            limit = { is_owned_by = ROOT }
+            set_temp_variable = { state_value_multiplier_temp = 1.05 }
+            econ_state_value_change_multiply_specified_state = yes
         }
-        recalculate_GDP_and_PUs_on_demand = yes
+    }
+    757 = {
+        if = {
+            limit = { is_owned_by = ROOT }
+            set_temp_variable = { state_value_multiplier_temp = 1.05 }
+            econ_state_value_change_multiply_specified_state = yes
+        }
+    }
+    562 = {
+        if = {
+            limit = { is_owned_by = ROOT }
+            set_temp_variable = { state_value_multiplier_temp = 1.10 }
+            econ_state_value_change_multiply_specified_state = yes
+        }
     }
 }
 
@@ -198,9 +226,10 @@ tnor_2rjw_raise_marines = {
                 }
             }
         }
+        # TNO:R level 4 begins at 0.17.
         562 = {
             create_unit = {
-                division = "division_template = \"Pacific Marine Division\" start_experience_factor = 0.80 start_equipment_factor = 1"
+                division = "division_template = \"Pacific Marine Division\" start_experience_factor = 0.18 start_equipment_factor = 1"
                 owner = ROOT
                 prioritize_location = 12683
                 count = 10
@@ -211,12 +240,17 @@ tnor_2rjw_raise_marines = {
 
 tnor_2rjw_call_up_chita_reserves = {
     add_manpower = 25000
+    tnor_2rjw_raise_chita_infantry = yes
+}
+
+tnor_2rjw_raise_chita_infantry = {
     if = {
         limit = { controls_state = 563 }
         tnor_2rjw_ensure_rifle_template = yes
+        # TNO:R level 4 begins at 0.17.
         563 = {
             create_unit = {
-                division = "division_template = \"Eastern Rifle Division\" start_experience_factor = 0.80 start_equipment_factor = 1"
+                division = "division_template = \"Eastern Rifle Division\" start_experience_factor = 0.18 start_equipment_factor = 1"
                 owner = ROOT
                 prioritize_location = 12641
                 count = 2

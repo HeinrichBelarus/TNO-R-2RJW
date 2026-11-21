@@ -1,134 +1,13 @@
-# Requiem accounts for liquid reserves in billions of dollars.
+# Called with a price in billions of USD. Each order also costs PP and CP.
 tnor_2rjw_pay_american_suppliers = {
+    add_political_power = -10
     add_command_power = -5
     hidden_effect = {
-        set_temp_variable = { money_reserves_temp = tnor_2rjw_purchase_price }
-        multiply_temp_variable = { money_reserves_temp = -1 }
-        econ_money_reserves_change_raw_money = yes
+        set_temp_variable = { temp_econ_spending_amount = tnor_2rjw_purchase_price }
+        econ_spend_money_once_effect_raw_money = yes
         USA = {
             set_temp_variable = { money_reserves_temp = tnor_2rjw_purchase_price }
             econ_money_reserves_change_raw_money = yes
-        }
-    }
-}
-
-tnor_2rjw_add_oil_to_largest_fields = {
-    for_loop_effect = {
-        start = 0
-        end = 3
-        compare = less_than
-        add = 1
-        set_temp_variable = { tnor_2rjw_largest_oil_field = 0 }
-        every_owned_state = {
-            limit = {
-                NOT = { has_state_flag = tnor_2rjw_oil_field_selected }
-                check_variable = { resource@oil > tnor_2rjw_largest_oil_field }
-            }
-            set_temp_variable = { tnor_2rjw_largest_oil_field = resource@oil }
-            save_event_target_as = tnor_2rjw_selected_oil_field
-        }
-        if = {
-            limit = { check_variable = { tnor_2rjw_largest_oil_field > 0 } }
-            event_target:tnor_2rjw_selected_oil_field = {
-                set_state_flag = tnor_2rjw_oil_field_selected
-                add_resource = { type = oil amount = tnor_2rjw_oil_increase }
-            }
-        }
-    }
-    every_owned_state = {
-        limit = { has_state_flag = tnor_2rjw_oil_field_selected }
-        clr_state_flag = tnor_2rjw_oil_field_selected
-    }
-}
-
-tnor_2rjw_develop_resource_deposit = {
-    set_temp_variable = { tnor_2rjw_deposit_size = 0 }
-    set_temp_variable = { tnor_2rjw_deposit_resource = 0 }
-    every_owned_state = {
-        limit = {
-            OR = {
-                AND = {
-                    check_variable = { tnor_2rjw_resource_region = 1 }
-                    tnor_2rjw_in_western_russia = yes
-                }
-                AND = {
-                    check_variable = { tnor_2rjw_resource_region = 2 }
-                    tnor_2rjw_in_western_siberia = yes
-                }
-                AND = {
-                    check_variable = { tnor_2rjw_resource_region = 3 }
-                    tnor_2rjw_in_siberia = yes
-                }
-                AND = {
-                    check_variable = { tnor_2rjw_resource_region = 4 }
-                    tnor_2rjw_in_far_east = yes
-                }
-            }
-        }
-        if = {
-            limit = { check_variable = { resource@oil > tnor_2rjw_deposit_size } }
-            set_temp_variable = { tnor_2rjw_deposit_size = resource@oil }
-            set_temp_variable = { tnor_2rjw_deposit_resource = 1 }
-            save_event_target_as = tnor_2rjw_selected_deposit
-        }
-        if = {
-            limit = { check_variable = { resource@aluminium > tnor_2rjw_deposit_size } }
-            set_temp_variable = { tnor_2rjw_deposit_size = resource@aluminium }
-            set_temp_variable = { tnor_2rjw_deposit_resource = 2 }
-            save_event_target_as = tnor_2rjw_selected_deposit
-        }
-        if = {
-            limit = { check_variable = { resource@rubber > tnor_2rjw_deposit_size } }
-            set_temp_variable = { tnor_2rjw_deposit_size = resource@rubber }
-            set_temp_variable = { tnor_2rjw_deposit_resource = 3 }
-            save_event_target_as = tnor_2rjw_selected_deposit
-        }
-        if = {
-            limit = { check_variable = { resource@tungsten > tnor_2rjw_deposit_size } }
-            set_temp_variable = { tnor_2rjw_deposit_size = resource@tungsten }
-            set_temp_variable = { tnor_2rjw_deposit_resource = 4 }
-            save_event_target_as = tnor_2rjw_selected_deposit
-        }
-        if = {
-            limit = { check_variable = { resource@steel > tnor_2rjw_deposit_size } }
-            set_temp_variable = { tnor_2rjw_deposit_size = resource@steel }
-            set_temp_variable = { tnor_2rjw_deposit_resource = 5 }
-            save_event_target_as = tnor_2rjw_selected_deposit
-        }
-        if = {
-            limit = { check_variable = { resource@chromium > tnor_2rjw_deposit_size } }
-            set_temp_variable = { tnor_2rjw_deposit_size = resource@chromium }
-            set_temp_variable = { tnor_2rjw_deposit_resource = 6 }
-            save_event_target_as = tnor_2rjw_selected_deposit
-        }
-    }
-    if = {
-        limit = { check_variable = { tnor_2rjw_deposit_size > 0 } }
-        event_target:tnor_2rjw_selected_deposit = {
-            if = {
-                limit = { check_variable = { tnor_2rjw_deposit_resource = 1 } }
-                add_resource = { type = oil amount = 10 }
-            }
-            else_if = {
-                limit = { check_variable = { tnor_2rjw_deposit_resource = 2 } }
-                add_resource = { type = aluminium amount = 10 }
-            }
-            else_if = {
-                limit = { check_variable = { tnor_2rjw_deposit_resource = 3 } }
-                add_resource = { type = rubber amount = 10 }
-            }
-            else_if = {
-                limit = { check_variable = { tnor_2rjw_deposit_resource = 4 } }
-                add_resource = { type = tungsten amount = 10 }
-            }
-            else_if = {
-                limit = { check_variable = { tnor_2rjw_deposit_resource = 5 } }
-                add_resource = { type = steel amount = 10 }
-            }
-            else_if = {
-                limit = { check_variable = { tnor_2rjw_deposit_resource = 6 } }
-                add_resource = { type = chromium amount = 10 }
-            }
         }
     }
 }

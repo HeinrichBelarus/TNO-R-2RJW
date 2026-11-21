@@ -36,6 +36,9 @@ focus_tree = {
         y = 2
         ai_will_do = { factor = 1 }
         completion_reward = {
+            add_to_variable = { tnor_2rjw_regular_production_units = 1 }
+            custom_effect_tooltip = tnor_2rjw_regular_pu_1_tt
+            recalculate_PUs_on_demand = yes
             add_ideas = tnor_2rjw_railway_1
         }
     }
@@ -126,8 +129,9 @@ focus_tree = {
         ai_will_do = { factor = 1 }
         completion_reward = {
             tnor_2rjw_build_fuel_silos = yes
-            set_temp_variable = { tnor_2rjw_oil_increase = 8 }
-            tnor_2rjw_add_oil_to_largest_fields = yes
+            571 = { if = { limit = { is_owned_by = ROOT } add_resource = { type = oil amount = 30 } } }
+            398 = { if = { limit = { is_owned_by = ROOT } add_resource = { type = oil amount = 10 } } }
+            579 = { if = { limit = { is_owned_by = ROOT } add_resource = { type = oil amount = 10 } } }
         }
     }
 
@@ -140,12 +144,9 @@ focus_tree = {
         y = 4
         ai_will_do = { factor = 1 }
         completion_reward = {
+            set_technology = { motorized_infantry_2 = 1 }
             add_equipment_to_stockpile = { type = motorized_equipment_2 amount = 1500 }
-            if = {
-                limit = { has_idea = tnor_2rjw_logistics_1 }
-                swap_ideas = { remove_idea = tnor_2rjw_logistics_1 add_idea = tnor_2rjw_logistics_2 }
-            }
-            else = { add_ideas = tnor_2rjw_logistics_2 }
+            swap_ideas = { remove_idea = tnor_2rjw_logistics_1 add_idea = tnor_2rjw_logistics_2 }
         }
     }
 
@@ -171,11 +172,12 @@ focus_tree = {
         y = 4
         ai_will_do = { factor = 1 }
         completion_reward = {
+            set_technology = { motorized_infantry_1 = 1 infantry_at2 = 1 artillery_1945 = 1 }
             add_equipment_to_stockpile = { type = infantry_equipment_1 amount = 25000 }
             add_equipment_to_stockpile = { type = support_equipment_1 amount = 2500 }
             add_equipment_to_stockpile = { type = motorized_equipment_1 amount = 1000 }
             add_equipment_to_stockpile = { type = anti_tank_equipment_1 amount = 1000 }
-            add_equipment_to_stockpile = { type = artillery_equipment_1 amount = 750 }
+            add_equipment_to_stockpile = { type = artillery_equipment_2 amount = 750 }
             add_equipment_to_stockpile = { type = anti_air_equipment_1 amount = 750 }
         }
     }
@@ -353,7 +355,7 @@ focus_tree = {
         ai_will_do = { factor = 1 }
         completion_reward = {
             IND = { add_opinion_modifier = { target = ROOT modifier = tnor_2rjw_relations_15 } }
-            custom_effect_tooltip = tnor_2rjw_indian_front_tt
+            set_country_flag = tnor_2rjw_indian_front_prepared
         }
     }
 
@@ -394,7 +396,11 @@ focus_tree = {
         y = 2
         ai_will_do = { factor = 1 }
         completion_reward = {
-            add_ideas = tnor_2rjw_industrial_might
+            add_to_variable = { tnor_2rjw_regular_production_units = 1 }
+            custom_effect_tooltip = tnor_2rjw_regular_pu_1_tt
+            recalculate_PUs_on_demand = yes
+            set_temp_variable = { gdp_growth_temp = 0.5 }
+            econ_gdp_growth_change = yes
         }
     }
 
@@ -420,8 +426,7 @@ focus_tree = {
         y = 4
         ai_will_do = { factor = 1 }
         completion_reward = {
-            set_temp_variable = { tnor_2rjw_oil_increase = 10 }
-            tnor_2rjw_add_oil_to_largest_fields = yes
+            custom_effect_tooltip = tnor_2rjw_oil_investment_unlock_tt
         }
     }
 
@@ -434,7 +439,11 @@ focus_tree = {
         y = 5
         ai_will_do = { factor = 1 }
         completion_reward = {
-            add_ideas = tnor_2rjw_every_ton_counts
+            add_to_variable = { tnor_2rjw_regular_production_units = 2 }
+            custom_effect_tooltip = tnor_2rjw_regular_pu_2_tt
+            recalculate_PUs_on_demand = yes
+            set_temp_variable = { gdp_growth_temp = 0.5 }
+            econ_gdp_growth_change = yes
             set_temp_variable = { money_reserves_temp = 2 }
             econ_money_reserves_change_raw_money = yes
         }
@@ -476,6 +485,11 @@ focus_tree = {
         ai_will_do = { factor = 1 }
         completion_reward = {
             add_ideas = tnor_2rjw_brighter_furnaces
+            add_to_variable = { tnor_2rjw_regular_production_units = 1 }
+            custom_effect_tooltip = tnor_2rjw_regular_pu_1_tt
+            recalculate_PUs_on_demand = yes
+            set_temp_variable = { gdp_growth_temp = 0.5 }
+            econ_gdp_growth_change = yes
             569 = { if = { limit = { is_owned_by = ROOT } add_resource = { type = steel amount = 20 } } }
             757 = { if = { limit = { is_owned_by = ROOT } add_resource = { type = steel amount = 20 } } }
         }
@@ -542,6 +556,10 @@ focus_tree = {
         y = 5
         ai_will_do = { factor = 1 }
         completion_reward = {
+            add_war_support = -0.10
+            add_stability = -0.05
+            set_temp_variable = { gdp_growth_temp = -1 }
+            econ_gdp_growth_change = yes
             add_ideas = tno_conscription_service_by_requirement
         }
     }
@@ -556,6 +574,11 @@ focus_tree = {
         ai_will_do = { factor = 1 }
         completion_reward = {
             add_ideas = tnor_2rjw_free_tomorrow
+            add_to_variable = { tnor_2rjw_regular_production_units = 1 }
+            custom_effect_tooltip = tnor_2rjw_regular_pu_1_tt
+            recalculate_PUs_on_demand = yes
+            set_temp_variable = { gdp_growth_temp = 0.5 }
+            econ_gdp_growth_change = yes
             add_manpower = 50000
         }
     }
@@ -581,7 +604,7 @@ focus_tree = {
                 tnor_2rjw_ensure_rifle_template = yes
                 570 = {
                     create_unit = {
-                        division = "division_template = \"Eastern Rifle Division\" start_experience_factor = 1 start_equipment_factor = 1"
+                        division = "division_template = \"Eastern Rifle Division\" start_experience_factor = 0.25 start_equipment_factor = 1"
                         owner = ROOT
                         prioritize_location = 7825
                         count = 1

@@ -236,6 +236,7 @@ focus_tree = {
         y = 5
         ai_will_do = { factor = 1 }
         completion_reward = {
+            set_technology = { fighter_1960 = 1 CAS_1960 = 1 }
             add_ideas = tnor_2rjw_thousand_engines
             add_equipment_to_stockpile = { type = jet_fighter_equipment_2 amount = 100 }
             add_equipment_to_stockpile = { type = jet_CAS_equipment_2 amount = 100 }
@@ -251,6 +252,7 @@ focus_tree = {
         y = 6
         ai_will_do = { factor = 1 }
         completion_reward = {
+            set_technology = { SPAA_1950 = 1 }
             add_ideas = tnor_2rjw_sky_shall_burn
             add_equipment_to_stockpile = { type = anti_air_equipment_1 amount = 500 }
             add_equipment_to_stockpile = { type = MBT_aa_equipment_1 amount = 100 }
@@ -390,8 +392,16 @@ focus_tree = {
         y = 10
         ai_will_do = { factor = 1 }
         mutually_exclusive = { focus = TNOR_2RJW_a_common_enemy_a_common_cause }
-        available = { has_country_flag = tnor_2rjw_dragon_force }
-        completion_reward = { tnor_2rjw_launch_broken_dragon = yes }
+        available = {
+            custom_trigger_tooltip = {
+                tooltip = tnor_2rjw_dragon_operation_ready_tt
+                tnor_2rjw_dragon_operation_ready = yes
+            }
+        }
+        completion_reward = {
+            tnor_2rjw_launch_broken_dragon = yes
+            custom_effect_tooltip = tnor_2rjw_seize_dragon_unlock_tt
+        }
     }
 
     focus = {
@@ -403,11 +413,13 @@ focus_tree = {
         y = 10
         ai_will_do = { factor = 1 }
         mutually_exclusive = { focus = TNOR_2RJW_operation_broken_dragon }
-        available = { tnor_2rjw_dragon_agreement_ready = yes }
-        completion_reward = {
-            custom_effect_tooltip = tnor_2rjw_seize_dragon_unlock_tt
-            country_event = { id = tnor_2rjw_dragon.3 }
+        available = {
+            custom_trigger_tooltip = {
+                tooltip = tnor_2rjw_dragon_agreement_ready_tt
+                tnor_2rjw_dragon_agreement_ready = yes
+            }
         }
+        completion_reward = { custom_effect_tooltip = tnor_2rjw_seize_dragon_unlock_tt }
     }
 
     focus = {

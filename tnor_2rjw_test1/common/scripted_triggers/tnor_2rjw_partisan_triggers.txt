@@ -6,28 +6,35 @@ tnor_2rjw_can_supply_partisans = {
     has_equipment = { support_equipment > 29 }
 }
 
-# State scope. 330 contains Ulaanbaatar and is exempt from the DMZ.
-tnor_2rjw_mongolian_partisan_land = {
-    is_owned_by = MEN
+# State lists are distinct: the first focus covers the staging belt, while
+# the second transfers only the provinces promised to each partisan government.
+tnor_2rjw_partisan_staging_belt = {
     OR = {
-        state = 330
         state = 814
+        state = 330
+        state = 815
+        state = 1647
+        state = 657
+        state = 1646
+        state = 1645
+        state = 1644
+        state = 408
     }
 }
 
-# State scope. Vladivostok (809) and Khabarovsk (1644) stay with their owner.
-# Birobidzhan (1646) is the Far Eastern assembly point and is exempt from the DMZ.
+tnor_2rjw_mongolian_partisan_land = {
+    OR = {
+        state = 814
+        state = 330
+        state = 715
+    }
+}
+
 tnor_2rjw_far_eastern_partisan_land = {
     OR = {
-        is_owned_by = MAN
-        is_owned_by = JAP
-    }
-    OR = {
-        state = 408
-        state = 409
-        state = 657
-        state = 1645
-        state = 1646
+        state = 1364
         state = 1647
+        state = 1646
+        state = 657
     }
 }

@@ -10,6 +10,8 @@ country_event = {
         name = tnor_2rjw_dragon.1.a
         ai_chance = { factor = 100 }
         set_country_flag = tnor_2rjw_dragon_talks
+        XIN = { clr_country_flag = tnor_2rjw_dragon_replied clr_country_flag = tnor_2rjw_dragon_accepted }
+        QIN = { clr_country_flag = tnor_2rjw_dragon_replied clr_country_flag = tnor_2rjw_dragon_accepted }
         tnor_2rjw_send_dragon_proposals = yes
     }
     option = {
@@ -27,17 +29,17 @@ country_event = {
 
     option = {
         name = tnor_2rjw_dragon.2.a
-        ai_chance = { factor = 100 }
+        ai_chance = { factor = 85 }
+        set_country_flag = tnor_2rjw_dragon_replied
         set_country_flag = tnor_2rjw_dragon_accepted
+        event_target:tnor_2rjw_campaign_russia = { country_event = { id = tnor_2rjw_dragon.3 } }
     }
     option = {
         name = tnor_2rjw_dragon.2.b
-        trigger = { is_ai = no }
-        event_target:tnor_2rjw_campaign_russia = {
-            clr_country_flag = tnor_2rjw_dragon_talks
-            set_country_flag = tnor_2rjw_dragon_force
-            country_event = { id = tnor_2rjw_dragon.5 }
-        }
+        ai_chance = { factor = 15 }
+        set_country_flag = tnor_2rjw_dragon_replied
+        clr_country_flag = tnor_2rjw_dragon_accepted
+        event_target:tnor_2rjw_campaign_russia = { country_event = { id = tnor_2rjw_dragon.5 } }
     }
 }
 
@@ -47,11 +49,7 @@ country_event = {
     desc = tnor_2rjw_dragon.3.d
     is_triggered_only = yes
 
-    option = {
-        name = tnor_2rjw_dragon.3.a
-        tnor_2rjw_ratify_dragon_agreements = yes
-        clr_country_flag = tnor_2rjw_dragon_talks
-    }
+    option = { name = tnor_2rjw_dragon.3.a }
 }
 
 country_event = {

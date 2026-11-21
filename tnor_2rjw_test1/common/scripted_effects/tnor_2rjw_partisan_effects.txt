@@ -46,17 +46,8 @@ tnor_2rjw_ensure_rifle_template = {
 tnor_2rjw_prepare_partisan_zones = {
     every_state = {
         limit = {
+            tnor_2rjw_partisan_staging_belt = yes
             NOT = { is_demilitarized_zone = yes }
-            OR = {
-                AND = {
-                    is_owned_by = MEN
-                    OR = { state = 814 state = 815 }
-                }
-                AND = {
-                    tnor_2rjw_far_eastern_partisan_land = yes
-                    NOT = { state = 1646 }
-                }
-            }
         }
         set_demilitarized_zone = yes
         set_state_flag = tnor_2rjw_partisan_dmz
@@ -66,11 +57,15 @@ tnor_2rjw_prepare_partisan_zones = {
 tnor_2rjw_establish_partisan_states = {
     every_state = {
         limit = { tnor_2rjw_mongolian_partisan_land = yes }
+        set_demilitarized_zone = no
+        clr_state_flag = tnor_2rjw_partisan_dmz
         add_core_of = MPS
         MPS = { transfer_state = PREV }
     }
     every_state = {
         limit = { tnor_2rjw_far_eastern_partisan_land = yes }
+        set_demilitarized_zone = no
+        clr_state_flag = tnor_2rjw_partisan_dmz
         add_core_of = FPS
         FPS = { transfer_state = PREV }
     }
@@ -169,23 +164,6 @@ tnor_2rjw_declare_eastern_war = {
         }
         ROOT = { add_to_faction = PREV }
         add_ideas = CSTO_Member
-    }
-    if = {
-        limit = {
-            has_completed_focus = TNOR_2RJW_the_tiger_and_the_bear
-            country_exists = IND
-            country_exists = AZH
-        }
-        AZH = {
-            tnor_2rjw_detach_dragon_target = yes
-            econ_leave_sphere = yes
-        }
-        IND = {
-            if = {
-                limit = { NOT = { has_war_with = AZH } }
-                declare_war_on = { target = AZH type = annex_everything }
-            }
-        }
     }
     every_country = {
         limit = {

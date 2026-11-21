@@ -1,0 +1,11 @@
+tnor_2rjw_indian_front_ready = {
+    original_tag = NOV
+    has_country_flag = tnor_2rjw_eastern_war_started
+    NOT = { has_country_flag = tnor_2rjw_indian_front_opened }
+    OR = {
+        has_country_flag = tnor_2rjw_indian_front_prepared
+        has_completed_focus = TNOR_2RJW_the_tiger_and_the_bear
+    }
+    country_exists = AZH
+    country_exists = IND
+}

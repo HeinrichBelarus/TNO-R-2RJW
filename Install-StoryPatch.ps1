@@ -124,14 +124,17 @@ $unitModifiersPath = 'common/units/unit_modifiers/unit_modifiers.txt'
 $unitModifiers = Replace-One (Read-RequiemFile $unitModifiersPath) '(?m)^sub_unit_modifiers = \{\n' (
     "sub_unit_modifiers = {`n`tmodifier_army_sub_unit_marine_attack_factor`n")
 
-# Resolve the two marked campaign targets as puppets before Requiem's generic annexation handler.
+# Restore native capitulation handling on installations updated from TEST1's old puppet logic.
 $peacePath = 'common/on_actions/TNO_peace_on_actions.txt'
-$peace = Replace-One (Read-RequiemFile $peacePath) '(?m)^\ton_capitulation = \{\n\t\teffect = \{\n' (
-    "`ton_capitulation = {`n`t`teffect = {`n" +
-    "`t`t`tif = {`n`t`t`t`tlimit = { tnor_2rjw_dragon_capitulation = yes }`n" +
-    "`t`t`t`ttnor_2rjw_handle_dragon_capitulation = yes`n`t`t`t}`n`t`t`telse = {`n")
-$peace = Replace-One $peace '(?m)^\t\t\tclr_global_flag = skip_default_capitulation[ \t]*\n\t\t\}\n\t\}' (
-    "`t`t`tclr_global_flag = skip_default_capitulation`n`t`t`t}`n`t`t}`n`t}")
+$peace = Read-RequiemFile $peacePath
+
+$economyPath = 'common/scripted_effects/TNO_economy_backend_scripted_effects.txt'
+$economy = Replace-One (Read-RequiemFile $economyPath) '(?m)^	set_variable = \{ production_units_gdp_raw = production_units \}[ 	]*$' (
+    "`tif = {`n" +
+    "`t`tlimit = { has_variable = tnor_2rjw_regular_production_units }`n" +
+    "`t`tadd_to_variable = { production_units = tnor_2rjw_regular_production_units }`n" +
+    "`t}`n" +
+    "`tset_variable = { production_units_gdp_raw = production_units }")
 
 # Validate every original anchor before writing anything to the installed submod.
 New-Item -ItemType Directory -Path $InstallPath -Force | Out-Null
@@ -144,6 +147,7 @@ $overrides = @{
     $debugPath = $debug
     $unitModifiersPath = $unitModifiers
     $peacePath = $peace
+    $economyPath = $economy
 }
 foreach ($relativePath in $overrides.Keys) {
     $destination = Join-Path $InstallPath $relativePath

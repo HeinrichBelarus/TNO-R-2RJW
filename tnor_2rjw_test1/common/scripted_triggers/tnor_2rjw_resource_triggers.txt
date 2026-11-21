@@ -1,34 +1,13 @@
-tnor_2rjw_in_western_russia = {
-    OR = { region = 15 region = 40 region = 132 region = 133 region = 134 region = 135 region = 138 region = 210 region = 235 region = 150 }
-}
-
-tnor_2rjw_in_western_siberia = {
-    OR = { region = 14 region = 147 region = 151 region = 209 }
-}
-
-tnor_2rjw_in_siberia = {
-    OR = { region = 207 region = 149 region = 211 }
-}
-
-tnor_2rjw_in_far_east = {
-    OR = { region = 148 region = 213 region = 236 }
-}
-
-tnor_2rjw_has_resource_deposit = {
-    OR = {
-        has_resources_amount = { resource = oil amount > 0 }
-        has_resources_amount = { resource = aluminium amount > 0 }
-        has_resources_amount = { resource = rubber amount > 0 }
-        has_resources_amount = { resource = tungsten amount > 0 }
-        has_resources_amount = { resource = steel amount > 0 }
-        has_resources_amount = { resource = chromium amount > 0 }
-    }
-}
-
 tnor_2rjw_has_supply_hub = {
     any_province_building_level = {
         building = supply_node
         level > 0
         province = { all_provinces = yes }
     }
+}
+
+tnor_2rjw_can_pay_american_suppliers = {
+    USA = { exists = yes }
+    command_power > 4.99
+    has_political_power > 9.99
 }

@@ -1,0 +1,26 @@
+on_actions = {
+    on_declare_war = {
+        effect = {
+            if = {
+                limit = {
+                    FROM = { tag = JAP }
+                    tnor_2rjw_indian_front_ready = yes
+                }
+                tnor_2rjw_open_indian_front = yes
+            }
+        }
+    }
+
+    # Covers existing saves and wars opened by joining an ally.
+    on_daily_NOV = {
+        effect = {
+            if = {
+                limit = {
+                    has_war_with = JAP
+                    tnor_2rjw_indian_front_ready = yes
+                }
+                tnor_2rjw_open_indian_front = yes
+            }
+        }
+    }
+}

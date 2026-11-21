@@ -12,7 +12,6 @@ focus_tree = {
         ai_will_do = { factor = 1 }
         completion_reward = {
             tnor_2rjw_call_up_chita_reserves = yes
-            tnor_2rjw_raise_irkutsk_infantry = yes
             tnor_2rjw_prepare_partisan_zones = yes
         }
     }
@@ -27,7 +26,6 @@ focus_tree = {
         ai_will_do = { factor = 1 }
         completion_reward = {
             tnor_2rjw_call_up_chita_reserves = yes
-            tnor_2rjw_raise_irkutsk_infantry = yes
             tnor_2rjw_establish_partisan_states = yes
         }
     }
@@ -42,7 +40,6 @@ focus_tree = {
         ai_will_do = { factor = 1 }
         completion_reward = {
             tnor_2rjw_call_up_chita_reserves = yes
-            tnor_2rjw_raise_irkutsk_infantry = yes
             tnor_2rjw_deploy_partisans = yes
         }
     }
@@ -57,7 +54,6 @@ focus_tree = {
         ai_will_do = { factor = 1 }
         completion_reward = {
             tnor_2rjw_call_up_chita_reserves = yes
-            tnor_2rjw_raise_irkutsk_infantry = yes
         }
     }
 
@@ -73,7 +69,7 @@ focus_tree = {
             add_war_support = 0.05
             add_stability = 0.10
             add_political_power = 50
-            tnor_2rjw_raise_irkutsk_infantry = yes
+            tnor_2rjw_raise_chita_infantry = yes
         }
     }
 
@@ -86,8 +82,9 @@ focus_tree = {
         y = 5
         ai_will_do = { factor = 1 }
         completion_reward = {
+            set_technology = { MRBM = 1 }
             add_equipment_to_stockpile = { type = MRBM_equipment amount = 50 }
-            tnor_2rjw_raise_irkutsk_infantry = yes
+            tnor_2rjw_raise_chita_infantry = yes
         }
     }
 
@@ -99,9 +96,6 @@ focus_tree = {
         x = 6
         y = 6
         ai_will_do = { factor = 1 }
-        completion_reward = {
-            tnor_2rjw_raise_irkutsk_infantry = yes
-        }
     }
 
     focus = {
