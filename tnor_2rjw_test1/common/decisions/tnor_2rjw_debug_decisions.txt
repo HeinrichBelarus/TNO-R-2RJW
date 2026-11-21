@@ -1,0 +1,16 @@
+NOV_debug_category = {
+    tnor_2rjw_debug_load_stage_one = {
+        icon = GFX_decision_generic_decision
+        allowed = { original_tag = NOV }
+        fire_only_once = no
+        ai_will_do = { factor = 0 }
+
+        complete_effect = {
+            if = {
+                limit = { has_country_flag = tnor_2rjw_east_started }
+                load_focus_tree = { tree = tnor_2rjw_eastern_preparation keep_completed = yes }
+            }
+            else = { tnor_2rjw_start_eastern_preparation = yes }
+        }
+    }
+}

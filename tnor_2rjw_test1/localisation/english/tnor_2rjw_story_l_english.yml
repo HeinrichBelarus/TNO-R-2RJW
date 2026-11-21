@@ -12,3 +12,5 @@
  tnor_2rjw_story.2.d:0 "The General Staff will prepare the western campaign. The cabinet must still decide what to tell Tokyo. We can open talks over Vladivostok now, or leave the question for a government that has already made peace in the west."
  tnor_2rjw_story.2.a:0 "Open negotiations with Japan."
  tnor_2rjw_story.2.b:0 "Settle the question after victory over Germany."
+ tnor_2rjw_debug_load_stage_one:0 "TEST1: Load Eastern Preparation Stage 1"
+ tnor_2rjw_debug_load_stage_one_desc:0 "Open the first eastern preparation focus tree immediately."
